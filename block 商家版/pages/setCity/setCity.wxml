@@ -1,0 +1,9 @@
+
+<block wx:for="{{area}}"  wx:for-index="index" wx:for-item="item">
+<view class='tabtitle'>{{index}}</view>
+<block wx:for="{{item}}" wx:for-item="areaitem">
+<view data-id="{{areaitem.id}}" bindtap='back' data-area_name="{{areaitem.area_name}}">
+{{areaitem.area_name}}
+</view>
+</block>
+</block>

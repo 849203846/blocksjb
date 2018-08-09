@@ -1,0 +1,32 @@
+/* pages/interested/interested.wxss */
+view{
+  height: 6.4rem;
+  width: 90%;
+  position: relative;
+  margin: 0 auto;
+}
+
+view text:nth-child(1){
+  position: absolute;
+  top: .5rem;
+  font-size: 1.2rem;
+}
+
+view text:nth-child(2){
+   position: absolute;
+  top: 2.5rem;
+  left: 0;
+  color: #ababab;
+}
+
+view text:nth-child(3){
+  position: absolute;
+  top: .5rem;
+  right: 0;
+  color: #f59800;
+}
+view text:nth-child(4){
+  position: absolute;
+  top: 4.25rem;
+  color: #ababab;
+}

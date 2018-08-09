@@ -1,0 +1,5 @@
+<!--pages/posAchieve/posAchieve.wxml-->
+<text>填写有吸引力的工作业绩，将会引起Boss的关注</text>
+<textarea maxlength='150' bindinput='setintroduce' value='{{introduce}}' placeholder='请输入内容'>
+</textarea>
+<view bindtap='submit'>保存</view>

@@ -1,0 +1,5 @@
+<image src='/images/logo.png'></image>
+  <view>
+    <view>微信授权即可使用该小程序</view>
+ <button open-type="getUserInfo" bindgetuserinfo="bindgetuserinfo">点我授权</button> 
+  </view>

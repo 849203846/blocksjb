@@ -1,0 +1,9 @@
+
+<block wx:for="{{trades}}"  wx:for-index="index" wx:for-item="item">
+<view class='itemtitle'>{{index}}</view>
+<view class='biaoqian' wx:for="{{item}}" wx:for-item="areaitem">
+<view data-id="{{areaitem.id}}" bindtap='back' data-trade="{{areaitem.trade}}">
+{{areaitem.trade}}
+</view>
+</view>
+</block>

@@ -1,0 +1,73 @@
+
+<navigator class='addintention' bindtap='opentankuang' >
+<image src='/images/zhiwei.png'></image>
+<text>项目名称</text>
+<text>{{name}}</text>
+<image src='/images/sanjiao.png'></image>
+</navigator>
+
+<navigator class='addintention' bindtap='lianjietankuang'>
+<image src='/images/lianjie.png'></image>
+<text>项目链接</text>
+<text>{{link}}</text>
+<image src='/images/sanjiao.png'></image>
+</navigator>
+
+<navigator  class='addintention' bindtap='jveseopentankuang'>
+<image src='/images/hangye.png'></image>
+<text>项目角色</text>
+<text>{{role}}</text>
+<image src='/images/sanjiao.png'></image>
+</navigator>
+
+<navigator url='../content/content?type=desc&content={{desc}}'
+ class='addintention'>
+
+<image src='/images/zhuanye.png'></image>
+<text>项目描述</text>
+<text>点击查看</text>
+<image src='/images/sanjiao.png'></image>
+</navigator>
+
+
+<navigator url='../content/content?type=exper&content={{exper}}'
+ class='addintention'>
+<image src='/images/yeji.png'></image>
+<text>项目业绩</text>
+<text>点击查看</text>
+<image src='/images/sanjiao.png'></image>
+</navigator>
+
+  <picker mode="multiSelector" class='addintention' bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArrayBegin}}">
+
+<image src='/images/time.png'></image>
+<text>开始时间</text>
+  <text  class="picker" >{{multiArrayBegin[0][start_atArray[0]]}}-{{multiArrayBegin[1][start_atArray[1]]}}</text>
+  <image src='/images/sanjiao.png'></image>
+  </picker>
+
+  <picker mode="multiSelector" class='addintention' bindchange="bindMultiPickerChanges" value="{{multiIndex}}" range="{{multiArrayOver}}">
+
+  <image src='/images/time.png'></image>
+<text>结束时间</text>
+  <text  class="picker" >{{multiArrayOver[0][end_at[0]]}}-{{multiArrayOver[1][end_at[1]]}}</text>
+  <image src='/images/sanjiao.png'></image>
+
+  </picker> 
+
+<view class='submit' bindtap='submit'>保存</view>
+<view class='submit' wx:if="{{id&&id!=''}}" bindtap='delsubmit'>删除</view>
+
+
+
+<view class='tan' style='display:{{tankuangstatus}}'>
+  <view class='tankuang'> 
+  <view>
+  <text>{{tankuangname}}</text>
+  <text bindtap='cloce'>关闭</text>
+  </view>
+  <input placeholder='　输入内容' value='{{tankuangcontent}}' bindinput='setname' placeholder-style='text-align: center; color:#cccccc;'></input>
+  <view bindtap='baocun'>保存</view>
+  </view>
+</view>
+

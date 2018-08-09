@@ -1,0 +1,20 @@
+<view class='header'>
+已选行业
+<text>{{num}}/3</text>
+<view class='biaoqiantop'>
+<view wx:if="{{tag_one!=''&&tag_one}}" bindtap='tag_one'>{{tag_one}}</view>
+<view wx:if="{{tag_two!=''&&tag_two}}" bindtap='tag_two'>{{tag_two}}</view>
+<view wx:if="{{tag_three!=''&&tag_three}}" bindtap='tag_three'>{{tag_three}}</view>
+</view>
+</view>
+
+<view class='biaoqian' wx:for="{{trades}}"  wx:for-item="areaitem">
+<!-- <view  bindtap='back' data-trade="{{areaitem.job}}"> -->
+<view class='itemtitle'  bindtap='back' data-trade="{{areaitem.job}}">{{areaitem.job}}</view>
+<!-- </view> -->
+</view>
+<!-- </block> -->
+<view bindtap='submit' class='submit'>
+<view class='submitbth'>提交
+</view>
+   </view>

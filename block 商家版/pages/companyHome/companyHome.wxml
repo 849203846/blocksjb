@@ -1,0 +1,38 @@
+<view class="header">
+  <view class='headleft'>{{company_shortname}}</view>
+  <view class='headleftTwo'>{{financ}} | {{team}}人 | {{trade}}</view>
+  <image src='{{logo}}'></image>
+</view>
+
+
+<view class='gongsixinxititle'>公司信息</view>
+
+
+<view class='banner'>
+  <swiper autoplay="true" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{environment}}">
+      <swiper-item>
+        <image src="{{item}}" class="slide-image" width="100%" height="8.6rem" />
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+
+
+<view class='gongsixinxititle' style='border:none;margin-bottom:5px;'>公司简介</view>
+<view class='content'>{{synopsis}}</view>
+<!-- <view class='gongsixinxititle' style='border:none;margin-bottom:5px;'>公司地址</view> -->
+<!-- <view>{{}}</view> -->
+<view class='gongsixinxititle' style='border:none;margin-bottom:5px;'>工商信息</view>
+<view class='gongshangxinxi'>
+<text>成立时间</text>
+<text>{{found_at}}</text>
+</view>
+<view class='gongshangxinxi'>
+<text>注册资本</text>
+<text>{{reg_capital}}万</text>
+</view>
+<view class='gongshangxinxi'>
+<text>法人代表</text>
+<text>{{corporation}}</text>
+</view>

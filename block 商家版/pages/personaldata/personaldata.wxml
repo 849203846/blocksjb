@@ -1,0 +1,60 @@
+<view class='informationItem' bindtap='opensetname'>
+  <image src='/images/my.png'></image>
+  <text>姓名</text>
+  <text>{{realname}}</text>
+  <image src='/images/sanjiao.png'></image>
+</view>
+
+ <picker 
+  class='informationItem'
+    mode="selector" 
+    bindchange='bindPickerChange'
+    value="{{multiIndex}}" 
+    range="{{selectorArray}}"
+  >
+   <image src='/images/xingbie.png'></image>
+  <text>性别</text>
+  <text>{{selectorArray[Sex]}}</text>
+  <image src='/images/sanjiao.png'></image>
+  </picker>
+
+
+     <picker  class='informationItem' mode="date" value="{{brith_at}}" bindchange="bindbrith_atChange">
+   <image src='/images/rili.png'></image>
+  <text>出身年月</text>
+  <text>{{brith_at}}</text>
+  <image src='/images/sanjiao.png'></image>
+  </picker>
+
+
+   <picker  class='informationItem' mode="date" value="{{date}}"  bindchange="bindDateChange">
+   <image src='/images/rili.png'></image>
+  <text>参加工作时间</text>
+  <text>{{date}}</text>
+  <image src='/images/sanjiao.png'></image>
+  </picker>
+
+
+
+
+<view class='informationItem' bindtap='weichattel'>
+  <image src='/images/weixin.png'></image>
+  <text>微信号</text>
+  <text>{{wechartel}}</text>
+  <image src='/images/sanjiao.png'></image>
+</view>
+
+<button bindtap='set'>保存</button>
+
+
+
+<view class='tan' style='display:{{tankuangstatus}}'>
+  <view class='tankuang'> 
+  <view>
+  <text>{{tankuangname}}</text>
+  <text bindtap='close'>关闭</text>
+  </view>
+  <input placeholder='输入内容'  bindinput='setname' value='{{name}}' placeholder-style='text-align: center; color:#cccccc;'></input>
+  <view bindtap='setnames'>保存</view>
+  </view>
+</view>

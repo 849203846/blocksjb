@@ -1,0 +1,17 @@
+image{
+  display: block;
+  width: 12rem;
+  height: 5.2rem;
+  margin: 1rem auto;
+}
+view{
+  text-align: center;
+  color: #4d4d4d;
+}
+button{
+  width: 80%;
+  border-radius: 25px;
+  color: white;
+  background: #f59800;
+  margin-top: 2rem;
+}

@@ -1,0 +1,5 @@
+<!--pages/projDescription/projDescription.wxml-->
+<text>描述项目信息，向Boss展示你的项目经验</text>
+<textarea maxlength='150' bindinput='setintroduce' value='{{introduce}}' placeholder='请输入内容'>
+</textarea>
+<view bindtap='submit'>保存</view>

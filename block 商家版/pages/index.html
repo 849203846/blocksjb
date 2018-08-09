@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>倒计时代码</title>
+    <script type="text/javascript">
+        function setBackTime(y/*year*/,m/*month*/,d/*day*/,h/*hour*/,s/*minutes*/){
+            var str = "var end = new Date(parseInt("+y+"),parseInt("+m+")-1,parseInt("+d+")";
+            if(typeof h !="undefined"){
+                str += ",parseInt("+h+")"
+            }
+            if(typeof s !="undefined"){
+                str += ",parseInt("+s+")"
+            }
+            str +=");";
+            eval(str);
+            var now = new Date();
+            var sp = end.getTime() - now.getTime();//毫秒数
+            sp = Math.ceil(sp/(1000*60*60*24));
+            return sp;
+        }
+        window.onload = function(){
+            var doc = document.getElementById("showDay");
+            setInterval(function(){
+                doc.innerHTML = setBackTime(2019,12,12);
+            },1000);
+        }
+    </script>
+</head>
+
+<body>
+距离2013-12-12还有<span id="showDay"></span>天
+</body>
+</html>

@@ -1,0 +1,68 @@
+.header{
+  height: 6rem;
+  width: 90%;
+  margin:  0 auto;
+  position: relative;
+  left: 0;
+  top: 0;
+}
+Page{
+  clear: both;
+}
+.header .headleft{
+  position: absolute;
+  top: 1.8rem;
+  left: 0;
+  font-size: 1.2rem;
+  /* font-weight: bold; */
+
+}
+.header .headleftTwo{
+  position: absolute;
+  bottom: 1rem;
+  left: 0;
+  color: #848484;
+  font-size: .8rem;
+}
+.header image{
+  position: absolute;
+  right: 0;
+  top: 2rem;
+  width: 3rem;
+  height: 3rem;
+
+}
+.gongsixinxititle{
+  display: inline;
+  font-size: 1rem;
+  color: #000;
+  padding-bottom:.5rem;
+  border-bottom: 2px solid #f59800;
+  margin-left: 1rem;
+}
+.banner{
+  height: 11.5rem;
+  width: 90%;
+  margin:1rem auto 0;
+}
+.content{
+  width: 90%;
+  margin: 0 auto;
+  border-bottom: 1px solid #e7e7e7;
+  padding-bottom: 1rem;  
+  padding-top: 1rem;
+  color: #777777;
+  margin-bottom: 1rem;
+}
+.gongshangxinxi{
+  width: 90%;
+  margin: 0 auto;
+  height: 4rem;
+  line-height: 4rem;
+  border-bottom: 1px solid #e7e7e7;
+  font-size: .9rem;
+}
+.gongshangxinxi text:nth-child(2){
+  text-align: right;
+  float: right;
+}

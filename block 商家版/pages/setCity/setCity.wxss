@@ -1,0 +1,40 @@
+page{
+  width: 99.8%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.oneinput{
+  background: #eeeeee;
+  padding-top: .36rem;
+  overflow: hidden;
+    height: 2rem;
+    border: none;
+    width: 100%;
+}
+input{
+  display: block;
+  width: 90%;
+  margin:  0 auto .48rem;
+  border: 1px solid #dddddd;
+  height: 1rem;
+  line-height: 1rem;
+  padding-left: .5rem;
+
+}
+view{
+  height: 3.2rem;
+  width: 90%;
+  background: white;
+  line-height: 3.2rem;
+  margin: 0 auto;
+  border-bottom: 1px solid #ccc;
+}
+.tabtitle{
+  height: 1.2rem;
+  background: #ababab;
+  line-height: 1.2rem;
+  font-size: .8rem;
+  width: 100%;
+  padding-left: 1rem;
+  overflow: hidden;
+}

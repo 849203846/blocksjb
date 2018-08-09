@@ -1,0 +1,26 @@
+/* pages/studyExperience/studyExperience.wxss */
+text{
+  margin-left: .5rem;
+  font-size: .6rem;
+  color: #ccc;
+
+}
+textarea{
+  width: 90%;
+  display: block;
+  height: 200px;
+  border: 1px solid #f59800;
+  border-radius: 5px;
+  padding:.5rem;
+  margin: 1rem auto;
+}
+view{
+  width: 80%;
+  border-radius: 50px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  color: white;
+  background: #f59800;
+  margin: 1rem auto;
+}

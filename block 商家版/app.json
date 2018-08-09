@@ -1,0 +1,65 @@
+{
+  "pages":[
+
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/myintentionadd/myintentionadd",
+    "pages/chat/chat",
+      "pages/setCity/setCity",
+          "pages/addintention/addintention",
+    "pages/phonelogin/phonelogin",
+    "pages/interested/interested",
+    "pages/jianli/jianli",
+    "pages/industry/industry",
+        "pages/ExpectedPosition/ExpectedPosition",
+       "pages/positionItel/positionItel",
+    "pages/personaldata/personaldata",
+    "pages/upjianli/upjianli",
+    "pages/myadvantage/myadvantage",
+    "pages/positionType/positionType",
+    "pages/getskill/getskill",
+    "pages/workExperience/workExperience",
+    "pages/eduExperience/eduExperience",
+    "pages/content/content",
+    "pages/gongsihangye/gongsihangye",
+    "pages/posContent/posContent",
+    "pages/posAchieve/posAchieve",
+    "pages/projAchieve/projAchieve",
+    "pages/projDescription/projDescription",
+    "pages/studyExperience/studyExperience",
+    "pages/sousuo/sousuo",
+    "pages/chatliat/chatliat",
+    "pages/getuser/getuser",
+    "pages/companyHome/companyHome"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "火聘online",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "images/Position1.png",
+        "selectedIconPath": "images/Position.png",
+        "text": "职位"
+      },
+      {
+      "pagePath": "pages/chatliat/chatliat",
+      "iconPath": "images/xiaoxi.png",
+      "selectedIconPath": "images/xiaoxi1.png",
+      "text": "消息"
+      },
+      {
+        "pagePath": "pages/logs/logs",
+        "iconPath": "images/my_light.png",
+        "selectedIconPath": "images/my_light1.png",
+        "text": "我的"
+      }
+      
+    ],
+    "selectedColor":"#f59800"
+  }
+}

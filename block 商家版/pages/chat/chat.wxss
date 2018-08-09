@@ -1,0 +1,63 @@
+@import "../../modules/chat-input/chat-input.wxss";
+page {
+    background-color: #EFEFEF;
+}
+.item{
+  margin-left: 1.1rem;
+  margin-right: 1rem;
+  margin-top: 1rem;
+  vertical-align: top;
+  position: relative;
+  height: 5rem;
+}
+.item image{
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50px;
+  vertical-align: top;
+  position: absolute;
+  right: 0;
+}
+.item text{
+  position: absolute;
+  right: 3.5rem;
+  display: inline-block;
+  height: 2.5rem;
+  vertical-align: middle;
+  padding-left: .8rem;
+  margin-left: .5rem;
+  padding-right:.8rem;
+  line-height: 2.5rem;
+  background: #f59800;
+  border-radius: 10px 10px 0 10px ;
+}
+
+.item1{
+  margin-left: 1.1rem;
+  margin-right: 1rem;
+  margin-top: 1rem;
+  vertical-align: top;
+  position: relative;
+  height: 5rem;
+}
+.item1 image{
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50px;
+  vertical-align: top;
+  position: absolute;
+  left: 0;
+}
+.item1 text{
+  position: absolute;
+  left: 3.5rem;
+  display: inline-block;
+  height: 2.5rem;
+  vertical-align: middle;
+  padding-left: .8rem;
+  margin-left: .5rem;
+  padding-right:.8rem;
+  line-height: 2.5rem;
+  background: #f59800;
+  border-radius: 10px 10px  10px 0;
+}

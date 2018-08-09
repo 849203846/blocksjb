@@ -1,0 +1,46 @@
+
+.oneinput{
+  background: #eeeeee;
+  padding-top: .36rem;
+  overflow: hidden;
+    height: 2rem;
+    border: none;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+}
+input{
+  display: block;
+  width: 90%;
+  margin:  0 auto .48rem;
+  border: 1px solid #dddddd;
+  height: 1rem;
+  line-height: 1rem;
+  padding-left: .5rem;
+
+}
+view{
+  height: 3.2rem;
+  width: 90%;
+  background: white;
+  line-height: 3.2rem;
+  margin: 0 auto;
+  border-bottom: 1px solid #ccc;
+}
+.rightone{
+  position: fixed;
+  bottom: 0;
+  top: 0;
+  right: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ overflow: scroll;
+
+ }
+.rightones{
+  width: 100%;
+  height: 100%;
+}

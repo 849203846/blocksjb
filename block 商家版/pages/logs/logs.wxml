@@ -1,0 +1,59 @@
+<view class='header'>
+  <view class='headerTitle'>
+    <view>{{username&&username!=''?username:'请填写在线简历'}}</view>
+    <view>{{userAg0}}</view>
+  </view>
+  <image src='{{avatarUrl}}'></image>
+</view>
+<!--  -->
+<!-- <video src="blob:http://www.iqiyi.com/fe52650c-1b3e-48ce-a377-8e0521b4f6b7"   controls ></video> -->
+
+<view class='footer'>
+   <navigator class='footerItem' url='/pages/upjianli/upjianli'>
+    <image src='/images/upjianli.png'></image>
+    <text>视频简历</text>
+    <image src='/images/sanjiao.png'></image>
+  </navigator>
+  <navigator class='footerItem' bindtap='gotojianli'>
+    <image src='/images/jianli.png'></image>
+    <text>在线简历</text>
+    <image src='/images/sanjiao.png'></image>
+  </navigator>
+ 
+  <!-- <navigator class='footerItem' url='/pages/interested/interested'>
+    <image src='/images/interested.png'></image>
+    <text>感兴趣职位</text>
+    <image src='/images/sanjiao.png'></image>
+  </navigator> -->
+
+  <navigator class='footerItem' bindtap='showModel'>
+    <image src='/images/interested.png'></image>
+    <text>我要招聘</text>
+    <image src='/images/sanjiao.png'></image>
+  </navigator>
+</view>
+
+
+
+<view class='btn' style='display:{{loginstatus}}' bindtap='outuser'>退出登录</view>
+
+
+
+<view class='login' style='display:{{loginClose}}'>
+  <view class='loginbox'>
+    <view class='loginboxTitle'>
+      <view>登录</view>
+      <image bindtap='loginClose' class='loginClose' src='/images/loginClose.png'></image>
+    </view>
+    <view class='loginbody' bindtap='wechatlogin'>
+      <button open-type="getPhoneNumber" class='loginwechat'>
+      <image src='/images/wechat.png'></image>  
+      <text>  微信帐号快速登录</text>
+      </button>
+    </view>
+     <view class='loginbody1' bindtap='phonelogin'>
+      <image src='/images/phone.png'></image>
+      <view class='loginwechat' >手机帐号登录/注册</view>
+    </view>
+  </view>
+</view>

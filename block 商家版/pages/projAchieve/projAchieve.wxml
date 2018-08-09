@@ -1,0 +1,5 @@
+<!--pages/projAchieve/projAchieve.wxml-->
+<text>描述项目业绩，向Boss展示你的工作能力</text>
+<textarea maxlength='150' bindinput='setintroduce' value='{{introduce}}' placeholder='请输入内容'>
+</textarea>
+<view bindtap='submit'>保存</view>

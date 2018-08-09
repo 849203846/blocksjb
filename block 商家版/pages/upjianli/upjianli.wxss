@@ -1,0 +1,21 @@
+/* pages/upjianli/upjianli.wxss */
+
+
+.notjianli{
+  width: 100%;
+
+}
+.notjianli view{
+  width: 80%;
+  border-radius: 50px;
+  background: #f59800;
+  color: white;
+  margin: 0 auto;
+  text-align: center;
+  height: 3rem;
+  line-height: 3rem;
+}
+#myVideo{
+  width: 100%;
+  margin-bottom: 1rem;
+}

@@ -1,0 +1,21 @@
+<view class='header'>
+已选行业
+<text>{{num}}/3</text>
+<view class='biaoqiantop'>
+<view wx:if="{{trade_name_one!=''&&trade_name_one}}" bindtap='deltrade_name_one'>{{trade_name_one}}</view>
+<view wx:if="{{trade_name_two!=''&&trade_name_two}}" bindtap='trade_name_two'>{{trade_name_two}}</view>
+<view wx:if="{{trade_name_three!=''&&trade_name_three}}" bindtap='trade_name_three'>{{trade_name_three}}</view>
+</view>
+</view>
+<block wx:for="{{trades}}"  wx:for-index="index" wx:for-item="item">
+<view class='itemtitle'>{{index}}</view>
+<view class='biaoqian' wx:for="{{item}}" wx:for-item="areaitem">
+<view data-id="{{areaitem.id}}" bindtap='back' data-trade="{{areaitem.trade}}">
+{{areaitem.trade}}
+</view>
+</view>
+</block>
+
+
+
+<view class='btn' bindtap='fanhui'>确定</view>

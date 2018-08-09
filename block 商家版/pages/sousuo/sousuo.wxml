@@ -1,0 +1,111 @@
+<view class="header">
+  <view class='inoutbox'>
+    <view bindtap='gotosetCity'>{{area_name}}
+      <image src='/images/sanjiao1.png'></image>
+    </view>
+    <input placeholder='输入搜索关键词' bindinput='setkeyword'></input>
+  </view>
+
+
+  <view class='tiaojianbox'>
+    <view bindtap='setbtn' data-flag='1'>
+      <text data-flag='1'>公司</text>
+      <image data-flag='1' src='/images/sanjiao1.png'></image>
+    </view>
+    <view bindtap='setbtn' data-flag='2'>
+      <text data-flag='2'>要求</text>
+      <image data-flag='2' src='/images/sanjiao1.png'></image>
+    </view>
+  </view>
+</view>
+
+
+
+
+<view class='tanchu' style='display:{{tanchustatus}}'>
+  <view class='tanchubox' wx:if="{{bannum==='1'}}">
+    <view class='tanchutitle'>融资规模</view>
+    <view class='textbox'>
+      <text bindtap='setfinanc' data-flag='' style="color:{{financ==''?'#f59800':'#787878'}} ;border-color:{{financ===''?'#f59800':'#4f4f4f'}}">全部</text>
+      <text bindtap='setfinanc' data-flag='0' style="color:{{financ=='0'?'#f59800':'#787878'}} ;border-color:{{financ==='0'?'#f59800':'#4f4f4f'}}">未融资</text>
+      <text bindtap='setfinanc' data-flag='1' style="color:{{financ=='1'?'#f59800':'#787878'}} ;border-color:{{financ==='1'?'#f59800':'#4f4f4f'}}">天使轮</text>
+      <text bindtap='setfinanc' data-flag='2' style="color:{{financ=='2'?'#f59800':'#787878'}} ;border-color:{{financ==='2'?'#f59800':'#4f4f4f'}}">A轮</text>
+      <text bindtap='setfinanc' data-flag='3' style="color:{{financ=='3'?'#f59800':'#787878'}} ;border-color:{{financ==='3'?'#f59800':'#4f4f4f'}}">B轮</text>
+      <text bindtap='setfinanc' data-flag='4' style="color:{{financ=='4'?'#f59800':'#787878'}} ;border-color:{{financ==='4'?'#f59800':'#4f4f4f'}}">C轮</text>
+      <text bindtap='setfinanc' data-flag='5' style="color:{{financ=='5'?'#f59800':'#787878'}} ;border-color:{{financ==='5'?'#f59800':'#4f4f4f'}}">D轮及以上</text>
+      <text bindtap='setfinanc' data-flag='6' style="color:{{financ=='6'?'#f59800':'#787878'}} ;border-color:{{financ==='6'?'#f59800':'#4f4f4f'}}">已上市</text>
+      <text bindtap='setfinanc' data-flag='7' style="color:{{financ=='7'?'#f59800':'#787878'}} ;border-color:{{financ==='7'?'#f59800':'#4f4f4f'}}">不需要融资</text>
+    </view>
+    <view class='tanchutitle'>团队规模</view>
+    <view class='textbox'>
+      <text bindtap='setteam' data-flag='' style="color:{{team==''?'#f59800':'#787878'}};border-color:{{team==''?'#f59800':'#787878'}};">全部</text>
+      <text bindtap='setteam' data-flag='0' style="color:{{team=='0'?'#f59800':'#787878'}};border-color:{{team=='0'?'#f59800':'#787878'}};">0-20人</text>
+      <text bindtap='setteam' data-flag='1' style="color:{{team=='1'?'#f59800':'#787878'}};border-color:{{team=='1'?'#f59800':'#787878'}};">20-99人</text>
+      <text bindtap='setteam' data-flag='2' style="color:{{team=='2'?'#f59800':'#787878'}};border-color:{{team=='2'?'#f59800':'#787878'}};">100-499人</text>
+      <text bindtap='setteam' data-flag='3' style="color:{{team=='3'?'#f59800':'#787878'}};border-color:{{team=='3'?'#f59800':'#787878'}};">500-999人</text>
+      <text bindtap='setteam' data-flag='4' style="color:{{team=='4'?'#f59800':'#787878'}};border-color:{{team=='4'?'#f59800':'#787878'}};">1000-9999人</text>
+      <text bindtap='setteam' data-flag='5' style="color:{{team=='5'?'#f59800':'#787878'}};border-color:{{team=='5'?'#f59800':'#787878'}};">10000人以上</text>
+    </view>
+
+    <view class='tanchutitle'>行业</view>
+    <view class='textbox'>
+      <text wx:for="{{gettradeskill}}" bindtap='settrade' style="color:{{item.id==trade?'#f59800':'#787878'}};border-color:{{item.id==trade?'#f59800':'#787878'}};" data-flag='{{item.id}}'>{{item.trade}}</text>
+    </view>
+  </view>
+  <view class='tanchubox' wx:if="{{bannum==='2'}}">
+    <view class='tanchutitle'>最低学历</view>
+    <view class='textbox'>
+      <text bindtap='seteducation' data-flag='' style="color:{{education==''?'#f59800':'#787878'}}; border-color:{{education==''?'#f59800':'#787878'}};">全部</text>
+      <text bindtap='seteducation' data-flag='0' style="color:{{education=='0'?'#f59800':'#787878'}}; border-color:{{education=='0'?'#f59800':'#787878'}};">初中及以上</text>
+      <text bindtap='seteducation' data-flag='1' style="color:{{education=='1'?'#f59800':'#787878'}}; border-color:{{education=='1'?'#f59800':'#787878'}};">中专/中技</text>
+      <text bindtap='seteducation' data-flag='2' style="color:{{education=='2'?'#f59800':'#787878'}}; border-color:{{education=='2'?'#f59800':'#787878'}};">高中</text>
+      <text bindtap='seteducation' data-flag='3' style="color:{{education=='3'?'#f59800':'#787878'}}; border-color:{{education=='3'?'#f59800':'#787878'}};">大专</text>
+      <text bindtap='seteducation' data-flag='4' style="color:{{education=='4'?'#f59800':'#787878'}}; border-color:{{education=='4'?'#f59800':'#787878'}};">本科</text>
+      <text bindtap='seteducation' data-flag='5' style="color:{{education=='5'?'#f59800':'#787878'}}; border-color:{{education=='5'?'#f59800':'#787878'}};">硕士</text>
+      <text bindtap='seteducation' data-flag='6' style="color:{{education=='6'?'#f59800':'#787878'}};border-color:{{education=='6'?'#f59800':'#787878'}}">博士</text>
+    </view>
+    <view class='tanchutitle'>工作经验</view>
+    <view class='textbox'>
+      <text bindtap='setwork_exp' data-flag='' style="color:{{work_exp==''?'#f59800':'#787878'}};border-color:{{work_exp==''?'#f59800':'#787878'}}">全部</text>
+      <text bindtap='setwork_exp' data-flag='0' style="color:{{work_exp=='0'?'#f59800':'#787878'}};border-color:{{work_exp=='0'?'#f59800':'#787878'}}">应届生</text>
+      <text bindtap='setwork_exp' data-flag='1' style="color:{{work_exp=='1'?'#f59800':'#787878'}};border-color:{{work_exp=='1'?'#f59800':'#787878'}}">1年以内</text>
+      <text bindtap='setwork_exp' data-flag='2' style="color:{{work_exp=='2'?'#f59800':'#787878'}};border-color:{{work_exp=='2'?'#f59800':'#787878'}}">1-3年</text>
+      <text bindtap='setwork_exp' data-flag='3' style="color:{{work_exp=='3'?'#f59800':'#787878'}};border-color:{{work_exp=='3'?'#f59800':'#787878'}}">3-5年</text>
+      <text bindtap='setwork_exp' data-flag='4' style="color:{{work_exp=='4'?'#f59800':'#787878'}};border-color:{{work_exp=='4'?'#f59800':'#787878'}}">5-10年</text>
+      <text bindtap='setwork_exp' data-flag='5' style="color:{{work_exp=='5'?'#f59800':'#787878'}};border-color:{{work_exp=='5'?'#f59800':'#787878'}}">10年以上</text>
+
+    </view>
+    <view class='tanchutitle'>薪资</view>
+    <view class='textbox'>
+      <text bindtap='setpay' data-flag='' style="{{pay==''?'color:#f59800;border-color:#f59800;':'color:#787878;border-color:#787878;'}}">全部</text>
+      <text bindtap='setpay' data-flag='0' style="{{pay=='0'?'color:#f59800;border-color:#f59800;':'color:#787878;border-color:#787878;'}}">3000以下</text>
+      <text bindtap='setpay' data-flag='1' style="{{pay=='1'?'color:#f59800;border-color:#f59800;':'color:#787878;border-color:#787878;'}}">3000-5000</text>
+      <text bindtap='setpay' data-flag='2' style="{{pay=='2'?'color:#f59800;border-color:#f59800;':'color:#787878;border-color:#787878;'}}">5000-10000</text>
+      <text bindtap='setpay' data-flag='3' style="{{pay=='3'?'color:#f59800;border-color:#f59800;':'color:#787878;border-color:#787878;'}}">10000-20000</text>
+      <text bindtap='setpay' data-flag='4' style="{{pay=='4'?'color:#f59800;border-color:#f59800;':'color:#787878;border-color:#787878;'}}">20000-50000</text>
+      <text bindtap='setpay' data-flag='5' style="{{pay=='5'?'color:#f59800;border-color:#f59800;':'color:#787878;border-color:#787878;'}}">50000以上</text>
+    </view>
+  </view>
+
+
+
+  <view class='btns'>
+    <view bindtap='chongzhi'>重置</view>
+    <view bindtap='queding'>确定</view>
+  </view>
+
+
+</view>
+
+<view style='height:5rem;'></view>
+<block wx:for="{{list}}">
+  <navigator class='positionItel'  url='../positionItel/positionItel?id={{item.id}}'>
+    <text class='Title'>{{item.position}}</text>
+    <text class='money'>{{item.min_pay}}-{{item.max_pay}}K</text>
+    <view class='body'>{{item.area_name}} | {{item.workexp}} | {{item.education}}</view>
+    <view class='company'>
+      <image class='companyLogo' src='/images/interested.png'></image>
+      <text class='companyname'>{{item.company_shortname}}</text>
+    </view>
+  </navigator>
+</block>

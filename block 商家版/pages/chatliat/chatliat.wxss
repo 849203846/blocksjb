@@ -1,0 +1,53 @@
+.chatItel{
+  height: 4.46rem;
+  width: 90%;
+  margin: 0 auto;
+  border-bottom: 1px solid #dbdbdb;
+  display: flex;
+}
+.chatItel image{
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50px;
+  background: #f59800;
+  margin-top: .6rem;
+}
+.chatItel .itemContent{
+  flex: 1;
+  position: relative;
+  left: .7rem;
+  top: .6rem;
+}
+.chatItel .itemContent view:nth-child(1) text:nth-child(1){
+  font-size: 1rem;
+  margin-right: .5rem;
+}
+.chatItel .itemContent view:nth-child(1) text:nth-child(2){
+  font-size: .8rem;
+  margin-right: .5rem;
+  color: #9f9f9f;
+}
+.chatItel .itemContent view:nth-child(1) text:nth-child(3){
+  font-size: .6rem;
+  margin-right: .5rem;
+  color: #f59800;
+  float: right;
+  padding-top: .2rem;
+
+}
+.chatItel .itemContent view:nth-child(2){
+  width: 100%;
+  font-size: .8rem;
+  margin-right: 1rem;
+  color: #9f9f9f;
+  margin-top: .5rem;
+      overflow: hidden;
+    white-space: nowrap;
+    text-overflow:ellipsis;
+
+}
+.chatItel .itemContent view:nth-child(2) text{
+  float: right;
+  color: #f59800;
+  margin-right: .5rem;
+}

@@ -1,0 +1,53 @@
+
+<navigator class='chatItel'  wx:for="{{list}}" url='../chat/chat?fid={{item.fid}}'>
+  <image src='{{item.wx_avatar_url}}'></image>
+  <view class='itemContent'>
+    <view>
+      <text>{{item.real_name}}</text>
+      <text>{{item.company_shortname}}-{{item.position}}</text>
+      <text>{{item.chat_time}}</text>
+    </view>
+    <view>{{item.content}} <text wx:if="{{item.is_msg==1}}">未读</text></view>
+  </view>
+</navigator>
+
+<!-- 
+<navigator class='chatItel'  wx:for="{{list}}" url='../chat/chat?fid={{item.fid}}'>
+  <image src='{{item.wx_avatar_url}}'></image>
+  <view class='itemContent'>
+    <view>
+      <text>{{item.real_name}}</text>
+      <text>{{item.company_shortname}}-{{item.position}}</text>
+      <text>{{item.chat_time}}</text>
+    </view>
+    <view>{{item.content}}</view>
+  </view>
+</navigator>
+
+
+
+<navigator class='chatItel'  wx:for="{{list}}" url='../chat/chat?fid={{item.fid}}'>
+  <image src='{{item.wx_avatar_url}}'></image>
+  <view class='itemContent'>
+    <view>
+      <text>{{item.real_name}}</text>
+      <text>{{item.company_shortname}}-{{item.position}}</text>
+      <text>{{item.chat_time}}</text>
+    </view>
+    <view>{{item.content}}</view>
+  </view>
+</navigator>
+
+
+
+<navigator class='chatItel'  wx:for="{{list}}" url='../chat/chat?fid={{item.fid}}'>
+  <image src='{{item.wx_avatar_url}}'></image>
+  <view class='itemContent'>
+    <view>
+      <text>{{item.real_name}}</text>
+      <text>{{item.company_shortname}}-{{item.position}}</text>
+      <text>{{item.chat_time}}</text>
+    </view>
+    <view>{{item.content}}</view>
+  </view>
+</navigator> -->

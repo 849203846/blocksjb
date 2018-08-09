@@ -1,0 +1,43 @@
+/* pages/phonelogin/phonelogin.wxss */
+.loginbanner image{
+  display: block;
+  margin: 0 auto;
+  width: 90%;
+  height: 8.6rem;
+}
+input{
+  border: 1px solid #ababab;
+  width: 90%;
+  margin: 0 auto;
+  height: 2.8rem;
+  margin-top: .92rem;
+  border-radius: 5px;
+  position: relative;
+}
+input image{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1rem;
+  height: 1rem;
+}
+.submit{
+  margin: 4rem auto 0;
+  background: #f59800;
+  height: 2.8rem;
+  line-height: 2.8rem;
+  width: 90%;
+  text-align: center;
+  color: white;
+  border-radius: 5px;
+}
+
+.login{
+  width: 90%;
+  color:#f59800;
+  margin: 1.4rem auto 0;
+}
+.login text:nth-child(2){
+  float: right;
+}
+

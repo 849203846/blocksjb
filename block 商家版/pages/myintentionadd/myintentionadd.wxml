@@ -1,0 +1,96 @@
+<!-- <view class="Tips">您的多个意向都会被Boss看到,请认真填写</view> -->
+
+<view class='addintention' bindtap='opensetname'>
+  <image src='/images/my.png'></image>
+  <text>公司名称</text>
+  <text>{{company}}</text>
+  <image src='/images/sanjiao.png'></image>
+</view>
+
+<navigator class='addintention' url='../positionType/positionType?saveid={{saveid}}' >
+<image src='/images/hangye.png'></image>
+<text>公司行业</text>
+<text>{{trade}}</text>
+<image src='/images/sanjiao.png'></image>
+</navigator>
+
+<navigator   bindtap='gongsihangye' class='addintention'>
+<image src='/images/leixin.png'></image>
+<text>职位类型</text>
+<text>{{job_id_name}}</text>
+<image src='/images/sanjiao.png'></image>
+</navigator>
+
+
+
+
+
+  <view class='addintention' bindtap='opensetnametwo'>
+<image src='/images/bao.png'></image>
+<text>职位名称</text>
+  <text  class="picker" >{{job_name}}</text>
+  <image src='/images/sanjiao.png'></image>
+
+  </view>
+
+<view class='addintention' bindtap='gotojinengbiaoqian'>
+<image src='/images/biaoqian.png'></image>
+<text>技能标签</text>
+<text>{{tag_one}}</text>
+<image src='/images/sanjiao.png'></image>
+</view>
+
+<view class='addintention' bindtap='setdivision'>
+<image src='/images/bumen.png'></image>
+<text>所属部门</text>
+<text>{{division}}</text>
+<image src='/images/sanjiao.png'></image>
+</view>
+
+<navigator url='../content/content?type=content&content={{work_content}}' class='addintention' >
+<image src='/images/zhuanye.png'></image>
+<text>工作内容</text>
+<text>点击查看</text>
+<image src='/images/sanjiao.png'></image>
+</navigator>
+
+
+<navigator class='addintention' url='../content/content?type=contents&content={{work_ach}}' >
+<image src='/images/yeji.png'></image>
+<text>工作业绩</text>
+<text>点击查看</text>
+<image src='/images/sanjiao.png'></image>
+</navigator>
+
+
+  <picker mode="multiSelector" class='addintention' bindchange="bindMultiPickerChange"  value="{{multiIndex}}" range="{{multiArrayBegin}}">
+
+<image src='/images/time.png'></image>
+<text>开始时间</text>
+  <text  class="picker" >{{multiArrayBegin[0][multiIndex[0]]}}-{{multiArrayBegin[1][multiIndex[1]]}}</text>
+  <image src='/images/sanjiao.png'></image>
+  </picker>
+
+  <picker mode="multiSelector" class='addintention' value="{{multiIndexs}}" bindchange="bindMultiPickerChanges"  range="{{multiArrayOver}}">
+
+  <image src='/images/time.png'></image>
+<text>结束时间</text>
+  <text  class="picker" >{{multiArrayOver[0][multiIndexs[0]]}}-{{multiArrayOver[1][multiIndexs[1]]}}</text>
+  <image src='/images/sanjiao.png'></image>
+
+  </picker> 
+
+<view class='submit' bindtap='submit'>保存</view>
+
+<view class='submit' style="display:{{saveid&&saveid!=''?'block':'none'}}" bindtap='delsubmit'>删除</view>
+
+<view class='tan' style='display:{{tankuangstatus}}'>
+  <view class='tankuang'> 
+  <view>
+  <text>{{tankuangname}}</text>
+  <text bindtap='close'>关闭</text>
+  </view>
+  <input placeholder='输入内容'  bindinput='setname' value='{{name}}' placeholder-style='text-align: center; color:#cccccc;'></input>
+  <view bindtap='setnames'>保存</view>
+  </view>
+</view>

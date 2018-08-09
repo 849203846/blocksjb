@@ -1,0 +1,173 @@
+.header{
+  width: 100%;
+  height: 7rem;
+  position: relative;
+  left: 0;
+  top: 0;
+  border-bottom: #fafafa solid 18px;
+}
+.header image{
+  display: block;
+  height: 3.6rem;
+  width: 3.6rem;
+  position: absolute;
+  right: 1rem;
+  top: 2rem;
+  border-radius: 50px;
+}
+.header .headerTitle{
+  margin-left: 1rem;
+  padding-top: 2.2rem;
+}
+.header .headerTitle view:nth-child(1){
+   font-weight: 500;
+   font-size: 1.2rem;
+   color: #333333;
+}
+.header .headerTitle view:nth-child(2){
+  padding-top: 1rem;
+  color: #aaaaaa;
+  font-size: 1rem;
+}
+.footer{
+  width: 100%;
+
+}
+.footer .footerItem{
+  margin-left: 1rem;
+  margin-right: 1.1rem;
+  border-bottom: 1px solid #eeeeee;
+  position: relative;
+  height: 3.52rem;
+}
+.footer .footerItem image:nth-child(1){
+  width: 1rem;
+  height: 1rem;
+  margin-top: 1.3rem;
+  
+}
+.footer .footerItem text{
+  padding-left: .8rem;
+}
+.footer .footerItem image:nth-child(3){
+  position: absolute;
+  right: -0.4rem;
+  top: 1.4rem;
+  width: .4rem;
+  height: .72rem;
+}
+.btn{
+  width: 10rem;
+  height: 2.5rem;
+  border-radius: 5px;
+  border: 1px solid #eeeeee;
+  text-align: center;
+  line-height: 2.5rem;
+  margin: 5rem auto 0;
+}
+.navigator-hover {
+  background: white;
+  color: #f59800;
+}
+.login{
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, .4)
+}
+.loginbox{
+  width:  14.4rem;
+  height: 11.4rem;
+  background: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -7.2rem;
+  margin-top: -5.7rem;
+  border-radius: 5px;
+}
+.loginboxTitle{
+  width: 100%;
+  position:relative;
+  height: 3.2rem;
+  line-height: 3.2rem;
+}
+.loginboxTitle view{
+  text-align: center;
+  line-height: 3.2rem;
+  color: black;
+  font-weight: 500;
+}
+.loginboxTitle image{
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: .76rem;
+  height: .76rem;
+}
+.loginbody{
+  height: 2.2rem;
+  width: 11rem;
+  margin: 0 auto;
+  background: #1aac19;
+  position: relative;
+  
+  border-radius: 5px;
+}
+.loginbody1{
+  height: 2.2rem;
+  width: 11rem;
+  margin: 1rem auto 0;
+  position: relative;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.loginbody .loginwechat{
+  height: 2.2rem;
+  width: 11rem;
+  background: #1aac19;
+  color: white;
+  font-size: .8rem;
+}
+.loginbody .loginwechat image{
+  margin-right: .5rem;
+}
+.loginbody .loginwechat text{
+  margin-left: 1rem;
+}
+.loginbody view{
+  color: white;
+  font-size: .8rem;
+  position: absolute;
+  top: .6rem;
+  left: 2.6rem;
+}
+.loginbody1 view{
+  font-size: .8rem;
+  position: absolute;
+  top: .6rem;
+  left: 2.6rem;
+}
+.loginbody image{
+  width: .9rem;
+  height: .72rem;
+  position: absolute;
+  left: 1.4rem;
+  top: .8rem;
+}
+.loginbody1 image{
+  width: .9rem;
+  height: 1rem;
+  position: absolute;
+  left: 1.4rem;
+  top: .6rem;
+}
+video{
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+}

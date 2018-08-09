@@ -1,0 +1,20 @@
+<!--index.wxml-->
+<view class='header'>
+<text>PHP</text>
+<image></image>
+<image></image>
+</view>
+
+
+<block wx:for="{{list}}">
+
+<view class='positionItel' bindtap='gotopositionItel' data-id='{{item.id}}'>
+  <text  data-id='{{item.id}}' class='Title'>{{item.position}}</text>
+  <text  data-id='{{item.id}}' class='money'>{{item.min_pay}}-{{item.max_pay}}K</text>
+  <view  data-id='{{item.id}}' class='body'>{{item.area_name}} | {{item.workexp}} | {{item.education}}</view>
+  <view  data-id='{{item.id}}' class='company'>
+    <image  data-id='{{item.id}}' class='companyLogo' src='{{item.logo_url}}' ></image>
+    <text  data-id='{{item.id}}' class='companyname'>{{item.company_shortname}}</text>
+  </view>
+</view>
+</block>

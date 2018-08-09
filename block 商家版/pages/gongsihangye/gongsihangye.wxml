@@ -1,0 +1,23 @@
+x<!-- <view class='oneinput'>
+<input type="text" placeholder='请输入关键字' placeholder-style='  text-align: center;font-size:.8rem;'></input>
+</view>
+<view style='    height: 2rem;'></view> -->
+
+<block  wx:for="{{jobsOne}}"  wx:for-item="item">
+<view data-id='{{item.id}}' bindtap='click'>
+{{item.job}}
+</view>
+</block>
+
+
+<view class='rightone' style='display:{{rightbox}}'>
+  <view style='height: 2rem;'></view>
+  <scroll-view  class='rightones' scroll-x   bindscroll="scroll" data-flag="1" >
+    <view  wx:for="{{jobstwo}}" bindtap='getrightbox'   wx:for-item="item" data-job='{{item.job}}' data-id='{{item.id}}'>
+    {{item.job}}
+    </view>
+        <view  wx:for="{{jobstwo}}" bindtap='getrightbox'  wx:for-item="item" data-id='{{item.id}}'>
+    {{item.job}}
+    </view>
+  </scroll-view>
+</view>
