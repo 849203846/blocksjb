@@ -1,18 +1,18 @@
 {
   "pages":[
-
+    "pages/zhaopinlist/zhaopinlist",
     "pages/index/index",
     "pages/logs/logs",
     "pages/myintentionadd/myintentionadd",
     "pages/chat/chat",
-      "pages/setCity/setCity",
-          "pages/addintention/addintention",
+    "pages/setCity/setCity",
+    "pages/addintention/addintention",
     "pages/phonelogin/phonelogin",
     "pages/interested/interested",
     "pages/jianli/jianli",
     "pages/industry/industry",
-        "pages/ExpectedPosition/ExpectedPosition",
-       "pages/positionItel/positionItel",
+    "pages/ExpectedPosition/ExpectedPosition",
+    "pages/positionItel/positionItel",
     "pages/personaldata/personaldata",
     "pages/upjianli/upjianli",
     "pages/myadvantage/myadvantage",
@@ -30,7 +30,9 @@
     "pages/sousuo/sousuo",
     "pages/chatliat/chatliat",
     "pages/getuser/getuser",
+   
     "pages/companyHome/companyHome"
+
   ],
   "window":{
     "backgroundTextStyle":"light",

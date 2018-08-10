@@ -48,7 +48,14 @@ Page({
   onShow:function(){
     app.getuser()
     // getposition
-    utils.sendRrquest('getposition', 1, {})
+    var data={
+      job_id: this.data.job_id,//职位id
+      education: this.data.education,//学历0=>'初中及以下',1=>'中专/中技',2=>'高中',3=>'大专',4=>'本科',5=>'硕士',6=>'博士'
+      work_exp: this.data.work_exp,//工作经验    0应届生 1一年以内 2 1-3年 3 3-5年 4 5-10年 5 10年以上
+      pay: this.data.pay,//薪资范围
+
+    }
+    utils.sendRrquest('getposition', 1, data)
     .then((res)=>{
       console.log(res.data.data.data)
       this.setData({

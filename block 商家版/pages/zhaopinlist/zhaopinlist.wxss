@@ -1,0 +1,34 @@
+.zhaopin{
+  width: 100%;
+  height: 4rem;
+  border-bottom: 1px solid #dcdcdc;
+  position: relative;
+}
+.zhaopin text{
+  line-height: 4rem;
+  padding-left: 1.5rem;
+}
+.zhaopin image{
+  width: .44rem;height: .8rem;
+  position: absolute;
+  top: 1.6rem;
+  right: 1.6rem;
+}
+.btn{
+  width: 100%;
+  border-radius: 5px;
+  color: white;
+  height: 40px;
+  line-height: 40px;
+
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  text-align: center;
+
+}
+.btn button{
+  width: 100%;
+  margin: 0 auto;
+  background: #f59800;
+}

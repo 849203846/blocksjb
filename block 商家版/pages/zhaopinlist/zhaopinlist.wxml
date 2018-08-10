@@ -1,0 +1,11 @@
+<view class='zhaopin' wx:for="{{list}}">
+  <navigator >
+  <text>{{item.job}}</text>
+  <image src='/images/sanjiao.png'></image>
+  </navigator>
+</view>
+
+
+<view class='btn'>
+<button>发布新职位</button>
+</view>
