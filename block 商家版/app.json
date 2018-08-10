@@ -1,6 +1,6 @@
 {
   "pages":[
-    "pages/zhaopinlist/zhaopinlist",
+
     "pages/index/index",
     "pages/logs/logs",
     "pages/myintentionadd/myintentionadd",
@@ -29,8 +29,8 @@
     "pages/studyExperience/studyExperience",
     "pages/sousuo/sousuo",
     "pages/chatliat/chatliat",
+        "pages/zhaopinlist/zhaopinlist",
     "pages/getuser/getuser",
-   
     "pages/companyHome/companyHome"
 
   ],

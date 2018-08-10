@@ -1,20 +1,61 @@
 <!--index.wxml-->
-<view class='header'>
-<text>PHP</text>
-<image></image>
-<image></image>
-</view>
+<swiper  scroll-x bindchange="swiperchange">
+<swiper-item  wx:for="{{list}}" bindtap='setTab'  data-id='{{item.job_id}}'>
+<image  class='leftimg' src='/images/sanjiao.png'></image>
+<text class='setTab'>{{item.job}}</text>
+<image class='rightimg' src='/images/rightsanjiao.png'></image>
 
+</swiper-item>
+  </swiper>
+  <view style='height:30px;'></view>
+<view class='swiper' style='height:30px;'></view>
+<view class='shaixuan' bindtap='openshaixuan'>要求</view>
+  <view class='yaoqiu'  style='display:{{shaixuan}}'>
+    <view class='yaoqiubox'>
+       <view class='title'>学历</view>
+       <view class='span'>
+        <text bindtap='seteducation' data-education="" style="{{education==''?'color:#fff;background-color:#f59800':''}}">全部</text>
+        <text bindtap='seteducation' data-education="0" style="{{education=='0'?'color:#fff;background-color:#f59800':''}}">初中及以上</text>
+        <text bindtap='seteducation' data-education="1" style="{{education=='1'?'color:#fff;background-color:#f59800':''}}">中专/中技</text>
+        <text bindtap='seteducation' data-education="2" style="{{education=='2'?'color:#fff;background-color:#f59800':''}}">高中</text>
+        <text bindtap='seteducation' data-education="3" style="{{education=='3'?'color:#fff;background-color:#f59800':''}}">大专</text>
+        <text bindtap='seteducation' data-education="4" style="{{education=='4'?'color:#fff;background-color:#f59800':''}}">本科</text>
+        <text bindtap='seteducation' data-education="5" style="{{education=='5'?'color:#fff;background-color:#f59800':''}}">硕士</text>
+        <text bindtap='seteducation' data-education="6" style="{{education=='6'?'color:#fff;background-color:#f59800':''}}">博士</text>
+       </view>
+        <view class='title'>经验</view>
+        <view class='span'>
+        <text bindtap='setwork_exp' data-work_exp="" style="{{work_exp==''?'color:#fff;background-color:#f59800':''}}">全部</text>
+        <text bindtap='setwork_exp' data-work_exp="0" style="{{work_exp=='0'?'color:#fff;background-color:#f59800':''}}">应届生</text>
+        <text bindtap='setwork_exp' data-work_exp="1" style="{{work_exp=='1'?'color:#fff;background-color:#f59800':''}}">一年以内</text>
+        <text bindtap='setwork_exp' data-work_exp="2" style="{{work_exp=='2'?'color:#fff;background-color:#f59800':''}}">1-3年</text>
+        <text bindtap='setwork_exp' data-work_exp="3" style="{{work_exp=='3'?'color:#fff;background-color:#f59800':''}}">3-5年</text>
+        <text bindtap='setwork_exp' data-work_exp="4" style="{{work_exp=='4'?'color:#fff;background-color:#f59800':''}}">5-10年</text>
+        <text bindtap='setwork_exp' data-work_exp="5" style="{{work_exp=='5'?'color:#fff;background-color:#f59800':''}}">10年以上</text>
+       </view>
+        <view class='title'>薪水</view>
+        <view class='span'>
+        <text bindtap='setpay' data-pay="" style="{{pay==''?'color:#fff;background-color:#f59800':''}}">全部</text>
+        <text bindtap='setpay' data-pay="0" style="{{pay=='0'?'color:#fff;background-color:#f59800':''}}">3K以下</text>
+        <text bindtap='setpay' data-pay="1" style="{{pay=='1'?'color:#fff;background-color:#f59800':''}}">3K/5K</text>
+        <text bindtap='setpay' data-pay="2" style="{{pay=='2'?'color:#fff;background-color:#f59800':''}}">5K-10K</text>
+        <text bindtap='setpay' data-pay="3" style="{{pay=='3'?'color:#fff;background-color:#f59800':''}}">10K-20K</text>
+        <text bindtap='setpay' data-pay="4" style="{{pay=='4'?'color:#fff;background-color:#f59800':''}}">20K-50K</text>
+        <text bindtap='setpay' data-pay="5" style="{{pay=='5'?'color:#fff;background-color:#f59800':''}}">50K以上</text>
+       </view>
 
-<block wx:for="{{list}}">
-
-<view class='positionItel' bindtap='gotopositionItel' data-id='{{item.id}}'>
-  <text  data-id='{{item.id}}' class='Title'>{{item.position}}</text>
-  <text  data-id='{{item.id}}' class='money'>{{item.min_pay}}-{{item.max_pay}}K</text>
-  <view  data-id='{{item.id}}' class='body'>{{item.area_name}} | {{item.workexp}} | {{item.education}}</view>
-  <view  data-id='{{item.id}}' class='company'>
-    <image  data-id='{{item.id}}' class='companyLogo' src='{{item.logo_url}}' ></image>
-    <text  data-id='{{item.id}}' class='companyname'>{{item.company_shortname}}</text>
+    </view>
+    <view class='btns'>
+      <view bindtap='cleardata'>重置</view>
+      <view bindtap='closeshaixuan'>确定</view>
+    </view>
   </view>
-</view>
-</block>
+
+<view class='positionItel'  wx:for="{{positionlist}}" bindtap='gotopositionItel' data-id='{{item.id}}'>
+    <view>
+      <image src='{{item.wx_avatar_url}}'></image>
+      <view>{{item.wx_nickname}} </view>
+      <view>{{item.work_log}} | {{item.degree}} | {{item.money}} </view>
+    </view>
+    <view class='introduce'>{{item.introduce}}</view>
+  </view>  
