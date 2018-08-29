@@ -74,8 +74,9 @@ Page({
       extraArr: [
         // {
         //   picName: 'choose_picture',
-        //   description: '照片'
-        // }, {
+        //   description: '获取联系方式'
+        // },
+        //  {
         //   picName: 'take_photos',
         //   description: '拍摄'
         // },
@@ -96,6 +97,15 @@ Page({
     that.textButton();
     that.extraButton();
     that.voiceButton();
+  },
+  onUnload:function(){
+    wx.onSocketOpen(function () {
+      wx.closeSocket()
+    })
+
+    wx.onSocketClose(function (res) {
+      console.log('WebSocket 已关闭！')
+    })
   },
   opensoit: function() {
     var data={
@@ -159,6 +169,7 @@ Page({
         })
         var newdata={
           content: content,
+          type:"say",
           fid:that.data.fid,
           time:new Date(),
           uid: wx.getStorageSync('userInfo').user_id
@@ -205,6 +216,19 @@ Page({
     chatInput.clickExtraListener(function(e) {
       console.log(e);
       let itemIndex = parseInt(e.currentTarget.dataset.index);
+      console.log(itemIndex)
+      if (itemIndex===0){
+        wx.onSocketOpen((res) => {
+          var data = {
+            type: 'contact',
+            uid: wx.getStorageSync('userInfo').user_id,
+            fid: this.data.fid,
+          };
+          wx.sendSocketMessage({
+            data: JSON.stringify(data)
+          })
+        })
+      }
       if (itemIndex === 2) {
         that.myFun();
         return;

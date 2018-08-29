@@ -28,7 +28,7 @@ page {
   margin-left: .5rem;
   padding-right:.8rem;
   line-height: 2.5rem;
-  background: #f59800;
+  background: #1eac8a;
   border-radius: 10px 10px 0 10px ;
 }
 
@@ -58,6 +58,6 @@ page {
   margin-left: .5rem;
   padding-right:.8rem;
   line-height: 2.5rem;
-  background: #f59800;
+  background: #1eac8a;
   border-radius: 10px 10px  10px 0;
 }

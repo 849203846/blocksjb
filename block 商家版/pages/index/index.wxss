@@ -127,7 +127,7 @@ image{
   text-align: center;
   height: 40px;
   line-height: 40px;
-  background: #f59800;
+  background: #1eac8a;
 }
 .btns view:nth-child(1){
   color: #000;
@@ -153,4 +153,29 @@ image{
   height: 1rem;
   line-height: 1rem;
   display: inline-block;
+}
+.not{
+  width: 40%;
+  display: block;
+  margin: 3rem auto;
+}
+.notcontent{
+  width: 50%;
+  margin: 1rem auto;
+  text-align: center;
+  height: 50px;
+  line-height: 50px;
+  background: #1eac8a;
+  border-radius: 5px;
+  color: white;
+  font-size: 1.2rem;
+}
+.notren{
+  width: 50%;
+  margin: 5rem auto;
+  text-align: center;
+  height: 50px;
+  line-height: 50px;
+  border-radius: 5px;
+  font-size: 1.2rem;
 }

@@ -114,7 +114,7 @@ page{
 }
 .btns view:nth-child(2){
   color: white;
-  background: #f59800;
+  background: #1eac8a;
 }
 
 .positionItel{
@@ -132,7 +132,7 @@ page{
 .positionItel .money{
   position: absolute;
   right: 1rem;
-  color: #f59800;
+  color: #1eac8a;
 }
 .body{
    margin-left: 1.1rem;

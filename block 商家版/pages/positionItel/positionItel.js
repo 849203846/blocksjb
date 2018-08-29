@@ -10,36 +10,24 @@ Page({
     var data={
       id: options.id
     }
-    utils.sendRrquest('getpositioninfo', 1, data)
+    utils.sendRrquest('getresumeinfo', 1, data)
     .then((res)=>{
-      console.log(res.data.data)
-      var data=res.data.data
-      this.setData({
-        area_name: data.area_name,
-        company_shortname: data.company_shortname,
-        id: data.id,
-        logo_url: data.logo_url,
-        max_pay: data.max_pay,
-        min_education: data.min_education,
-        min_pay: data.min_pay,
-        position: data.position,
-        recruiters: data.recruiters,
-        user_id: data.user_id,
-        work_exp: data.work_exp,
-        wx_avatar_url: data.wx_avatar_url,
-        work_exp: data.work_exp,
-        real_name: data.real_name,
-        min_education: data.min_education,
-        tag_one:data.tag_one,
-        tag_two:data.tag_two,
-        tag_three:data.tag_three,
-        company_fullname: data.company_fullname,
-        trade: data.trade,
-        logo_url: data.logo_url,
-        address: data.address,
-        describe: data.describe,
-        com_id: data.com_id
-      })
+      if(res.data.status=='200'){
+        this.setData({
+          id: options.id,
+          age:res.data.data.age,
+          degree: res.data.data.degree,
+          introduce: res.data.data.introduce,
+          work_log: res.data.data.work_log,
+          work_status: res.data.data.work_status,
+          wx_avatar_url: res.data.data.wx_avatar_url,
+          wx_gender: res.data.data.wx_gender,
+          wx_nickname: res.data.data.wx_nickname,
+          will: res.data.data.will,
+          project: res.data.data.project,
+          work:res.data.data.work
+        })
+      }
       wx.hideLoading()
     })
   },
@@ -53,7 +41,7 @@ Page({
   },
   gotochat:function(){
     wx.navigateTo({
-      url:'../chat/chat?fid=' + this.data.user_id
+      url: '../chat/chat?fid=' + this.data.id
     })
   }
 })

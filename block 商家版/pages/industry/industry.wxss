@@ -56,5 +56,5 @@ page{
   line-height: 40px;
   color: white;
   text-align: center;
-  background: #f59800;
+  background: #1eac8a;
 }

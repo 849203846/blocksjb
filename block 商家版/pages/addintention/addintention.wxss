@@ -1,3 +1,4 @@
+/* pages/myintentionadd/myintentionadd.wxss */
 
 .Tips{
   color: #c1c1c1;
@@ -42,18 +43,67 @@
   height: 2.8rem;
   line-height: 2.8rem;
   color: white;
-  background: #f59800;
+  background: #1eac8a;
   width: 90%;
   margin: 0 auto;
   text-align: center;
   border-radius: 5px;
-  margin-top: 4rem;
-}
-page{
-  overflow: hidden;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 picker{
   position: absolute;
   right: 0;
   top: 0;
+}
+
+.tan{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  right: 0;
+  top:0;
+  bottom:0;
+  background: rgba(0,0,0,.4)
+}
+
+.tankuang{
+  width: 17.5rem;
+  background: white;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  height: 12rem;
+  margin-left: -8.75rem;
+  margin-top: -12rem;
+}
+.tankuang view:nth-child(1){
+  height: 3rem;
+  line-height: 3rem;
+  text-align: center;
+}
+.tankuang view:nth-child(1) text:nth-child(1){
+  font-size: 1.2rem;
+  margin-right: -2rem;
+}
+.tankuang view:nth-child(1) text:nth-child(2){
+  color: #1eac8a;
+  float: right;
+  margin-right: 1rem;
+}
+.tankuang input{
+  height: 2.7rem;
+  width: 80%;
+  margin: 0 auto;
+  border: 1px solid #cccccc;
+  text-align: center;
+  
+}
+.tankuang view:nth-child(3){
+  text-align: center;
+  line-height: 2.8rem;
+  height: 2.8rem;color: #1eac8a;
+  border-top: 1px solid #bababa;
+  margin-top: 3rem;
 }

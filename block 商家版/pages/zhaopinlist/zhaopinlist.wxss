@@ -30,5 +30,5 @@
 .btn button{
   width: 100%;
   margin: 0 auto;
-  background: #f59800;
+  background: #1eac8a;
 }

@@ -1,83 +1,66 @@
-<!--pages/positionItel/positionItel.wxml-->
-
-<view class='header'>
-  <view class='headerone'>
-    <view>
-      <text>{{position}}</text>
-      <text>{{min_pay}}-{{max_pay}}k</text>
-    </view>
-    <view>{{area_name}}|{{work_exp}}|{{min_education}}</view>
+<view class='position'>
+  <view class='positiontitle'>
+    <view class='positiontitlename'>{{wx_nickname}}</view>
+    <view class='positiontitledergree'>{{work_log+"-"+age+"-"+degree}}</view>
   </view>
-
-  <view class='headertwo'>
-    <image src='{{wx_avatar_url}}'></image>
-    <view>
-      <text>{{real_name}}</text>
-      <!-- <text>刚刚活跃</text> -->
-    </view>
-    <view>{{recruiters}}</view>
-  </view>
+  <image class='logo' src='{{wx_avatar_url}}'></image>
 </view>
 
 
-<view class='bodyer'>
-    <view class='title'>
-      <text></text>
-      <text>职位详情</text>
-  </view>
-  <view class='description'>
-    <view class='descriptiontitle'>职位描述</view>
-    <view>{{describe}}</view>
-  </view>
-
-
-  <view class='title'  wx:if="{{tag_one!=''}}">
-      <text></text>
-      <text>技能标签</text>
-  </view>
-   <view class='SkillLbael' wx:if="{{tag_one!=''}}">{{tag_one}}</view>
-      <view class='SkillLbael'  wx:if="{{tag_one!=''}}" >{{tag_three}}</view>
-      <view class='SkillLbael'  wx:if="{{tag_one!=''}}" >{{tag_two}}</view>
-  <view style='height:.36rem;background:#fafafa;margin-top:1rem;'></view>
-
-  <view class='company' bindtap='companyHome'>
-    <image src='{{logo_url}}' class='companylogo'></image>
-    <view class='companyname'>{{company_fullname}}</view>
-    <view class='CompanyProfile'>{{trade}}</view>
-  </view>
-  <view class='title' wx:if="{{address!=''}}">
-      <text></text>
-      <text>工作地址</text>
-  </view>
-
-  <view class='WorkingRess' wx:if="{{address!=''}}">
-    <text>{{address}}</text>
-    <image src='/images/sanjiao.png'></image>
-  </view>
-
-
+<view class='positioncontent'>
+  <view class='positioncontentwork_status'>{{work_status}}</view>
+  <view class='positioncontentintroduce'>{{introduce}}</view>
 </view>
 
 
-
-
-
-
-
-
-<view style='  height: 2.6rem;'></view>
-
-
-<view class='footer'>
-  <!-- <view class='fengxiang'>
-    <image src='/images/fenxiang.png'></image>
-    <view>分享</view>
-  </view>
-  <view class='xingqu'>
-    <image src='/images/xin.png'></image>
-    <view>感兴趣</view>
-  </view> -->
-  <view class='goutong' bindtap='gotochat'>
-  立即沟通
-  </view>
+<view class='title'>
+  <text></text>
+  <text>求职期望</text>
 </view>
+
+<block wx:for="{{will}}">
+<view class='willitemOne'>
+  <text>{{item.job+"，"+item.area}}</text> <text>{{item.pay_start+"-"+item.pay_end}}k</text>
+</view>
+<view class='willitemTWO' wx:if="{{item.trade_one}}">期望行业：{{item.trade_one+'-'+item.trade_two+'-'+item.trade_three}}</view>
+</block>
+
+<view style='width:90%;margin:0 auto;border-top:1px solid #ccc'></view>
+
+<view class='title'>
+  <text></text>
+  <text>工作经历</text>
+</view>
+
+<block wx:for="{{work}}">
+<view class='willitemOne workitemOne'>
+  <text>{{item.company}}</text> <text>{{item.start_at+"-"+item.end_at}}</text>
+</view>
+<view class='willitemTWO workitemTwo' wx:if="{{item.work_content}}">{{item.work_content}}</view>
+<view wx:if="{{item.tag_one!=''}}" class='biaoqian'>
+  <text>{{item.tag_one}}</text>
+  <text wx:if="{{item.tag_two}}">{{item.tag_two}}</text>
+  <text wx:if="{{item.tag_three}}">{{item.tag_three}}</text>
+</view>
+<view style='height:1rem;'></view>
+</block>
+
+
+<view style='width:90%;margin:0 auto;border-top:1px solid #ccc'></view>
+
+<view class='title'>
+  <text></text>
+  <text>项目经验</text>
+</view>
+
+<block wx:for="{{project}}">
+<view class='willitemOne workitemOne' wx:if="{{item.name}}">
+  <text>{{item.name}}</text> <text>{{item.start_at+"-"+item.end_at}}</text>
+</view>
+<view class='willitemTWO workitemTwo' wx:if="{{item.link}}">项目线上地址：{{item.link}}</view>
+<view  class='willitemTWO workitemTwo'  wx:if="{{item.exper}}" >项目介绍：{{item.exper}}</view>
+  
+</block>
+
+<view style='height:40px;'></view>
+<view class='btn' bindtap='gotochat'>立即沟通</view>

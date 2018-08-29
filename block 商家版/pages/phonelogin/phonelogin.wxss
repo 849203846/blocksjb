@@ -23,7 +23,7 @@ input image{
 }
 .submit{
   margin: 4rem auto 0;
-  background: #f59800;
+  background: #1eac8a;
   height: 2.8rem;
   line-height: 2.8rem;
   width: 90%;
@@ -34,7 +34,7 @@ input image{
 
 .login{
   width: 90%;
-  color:#f59800;
+  color:#1eac8a;
   margin: 1.4rem auto 0;
 }
 .login text:nth-child(2){

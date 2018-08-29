@@ -7,14 +7,13 @@ Page({
    */
   data: {
     multiArrayBegin: [
-      ['2018年', '2017年', '2016年', '2015年', '2014年', '2013年', '2012年', '2011年', '2010年', '2009年', '2008年', '2007年', '2006年', '2005年', '2004年', '2003年', '2002年', '2001年', '2000年', '1999年', '1998年', '1997年', '1996年', '1995年', '1994年', '1993年', '1992年', '1991年', '1990年', '1990年以前'],
-      ['12月', '11月', '10月', '09月', '08月', '07月', '06月', '05月', '04月', '03月', '02月', '01月',]
+      "0-20人","20-99人","100-499人","500-999人","1000-9999人","10000人以上"
       ],
-    multiIndex:[0,0],
-    multiIndexs:[0,0],
+    multiIndex:[0],
+    multiIndexs:[0],
   multiArrayOver: [
-      [ '2018年', '2017年', '2016年', '2015年', '2014年', '2013年', '2012年', '2011年', '2010年', '2009年', '2008年', '2007年', '2006年', '2005年', '2004年', '2003年', '2002年', '2001年', '2000年', '1999年', '1998年', '1997年', '1996年', '1995年', '1994年', '1993年', '1992年', '1991年', '1990年', '1990年以前'],
-      [ '12月', '11月', '10月', '09月', '08月', '07月', '06月', '05月', '04月', '03月', '02月', '01月',]],
+    '未融资','天使轮','A轮','B轮','C轮','D轮及以上','已上市','不需要融资'
+     ],
     tankuangstatus:'none',
     company:'',//公司名称
     tankuangname:'',
@@ -22,75 +21,13 @@ Page({
     division:'',//所属部门
     job_id:'',
     work_content:'',
-    work_ach:''
+    work_ach:'',
+    off_network:'',
+    logo_url:'',
+    name:''
   },
   onLoad:function(op){
-    if(op.id){
-      this.setData({
-        saveid:op.id
-      })
-      wx.getStorage({
-        key: 'getworks',
-        success: (res) => {
-          if(res.data){
-            console.log(res.data)
-            var update_at=[]
-            var start_at=[]
-            var multiArrayOver = this.data.multiArrayOver
-            for(var i=0;i<res.data.length;i++){
-              console.log(res.data[i].id )
-              if(res.data[i].id==op.id){
-                var item = res.data[i]
-                var update_atOne = item.update_at.split('-')[0]
-                var update_atTWO = item.update_at.split('-')[1]
-                var start_atOne = item.start_at.split('-')[0]
-                var start_atTwo = item.start_at.split('-')[1]
-                for (var i = 0; i < multiArrayOver[0].length; i++) {
-                  if (multiArrayOver[0][i].split('年')[0] === update_atOne) {
-                    update_at.push(i)
-                    break
-                  }
-                }
-                for (var i = 0; i < multiArrayOver[1].length; i++) {
-                  if (multiArrayOver[1][i].split('月')[0] === update_atTWO) {
-                    update_at.push(i)
-                    break
-                  }
-                }
-                for (var i = 0; i < multiArrayOver[0].length; i++) {
-                  if (multiArrayOver[0][i].split('年')[0] === start_atOne) {
-                    start_at.push(i)
-                    break
-                  }
-                }
-                for (var i = 0; i < multiArrayOver[1].length; i++) {
-                  if (multiArrayOver[1][i].split('月')[0] === start_atTwo) {
-                    start_at.push(i)
-                    break
-                  }
-                }
-                this.setData({
-                  company: item.company,
-                  division: item.division,
-                  job_id: item.job_id,
-                  job_name: item.job_name,
-                  tag_one: item.tag_one,
-                  tag_three: item.tag_three,
-                  tag_two: item.tag_two,
-                  trade_id: item.trade_id,
-                  trade:item.trade_name,
-                  work_ach:item.work_ach,
-                  work_content:item.work_content,
-                  multiIndex:start_at,
-                  multiIndexs: update_at
-                })
-              }
-            }
-           
-          }
-        },
-      })
-    }
+    
   },
   onShow:function(){
     if (app.globalData.job_id_name && app.globalData.job_id_name!=''){
@@ -102,7 +39,6 @@ Page({
       app.globalData.job_id = ''
       app.globalData.job_id_name=''
     } 
-    console.log(app.globalData.trade)
     if (app.globalData.trade!=''){
       this.setData({
         trade: app.globalData.trade,
@@ -154,7 +90,7 @@ opensetname: function() {
     this.setData({
       tankuangstatus: 'block',
       name: this.data.job_name,
-      tankuangname: '职位名称'
+      tankuangname: '公司简称'
     })
   },
   setname: function (e) {
@@ -167,12 +103,12 @@ opensetname: function() {
     this.setData({
       tankuangstatus: 'block',
       name: this.data.division,
-      tankuangname: '所属部门'
+      tankuangname: '公司职位'
     })
   },
   setnames: function () {
     console.log(this.data.tankuangname)
-    if (this.data.tankuangname === '职位名称'){
+    if (this.data.tankuangname === '公司简称'){
       this.setData({
         job_name: this.data.name,
       })
@@ -180,9 +116,13 @@ opensetname: function() {
       this.setData({
         company: this.data.name,
       })
-    } else if (this.data.tankuangname === '所属部门'){
+    } else if (this.data.tankuangname === '公司职位'){
       this.setData({
         division: this.data.name,
+      })
+    } else if (this.data.tankuangname === '官网地址'){
+      this.setData({
+        off_network: this.data.name
       })
     }
     
@@ -210,7 +150,13 @@ opensetname: function() {
     })
   },
 
-
+  setoff_network: function (e) {
+    this.setData({
+      tankuangstatus: 'blcok',
+      tankuangname: '官网地址',
+      name: this.data.off_network
+    })
+  },
   gongsihangye: function () {
     wx.navigateTo({
       url: '../gongsihangye/gongsihangye',
@@ -240,42 +186,125 @@ opensetname: function() {
       multiIndexs: e.detail.value
     })
   },
+  setlogo_url:function(){
+      var that = this
+        // timestamp = Date.parse(new Date()) / 1000 + String(Math.random()).slice(2, 5),
+      wx.chooseImage({
+        count: 1,
+        sizeType: ['original', 'compressed'],
+        sourceType: ['album', 'camera'],
+        success: function (res) {
+          var tempFilePaths = res.tempFilePaths[0]
+          that.setData({ tempFilePaths: tempFilePaths })
+          wx.showToast({
+            mask: true,
+            title: '上传中',
+            icon: 'loading',
+            duration: 1000
+          })
+          wx.uploadFile({
+            url:'https://recruit.zhangchaoqun.cn/api/uploadfile',
+            filePath: tempFilePaths,
+            name: 'file',
+            header: { 'content-type': 'multipart/form-data' },
+            formData: {
+              type:'logo',
+              user_id: wx.getStorageSync('userInfo').user_id
+ 
+            },
+            success: function (a) {
+              console.log('a',a)
+              if (a.statusCode === 200) {
+                wx.showToast({
+                  mask: true,
+                  title: '上传成功',
+                  icon: 'success',
+                  duration: 1000
+                })
+                var b=JSON.parse(a.data)
+                console.log(b)
+                that.setData({ logo_url: b.data })
+              } else {
+                wx.showToast({
+                  mask: true,
+                  title: '上传失败',
+                  icon: 'fail',
+                  duration: 1000
+                })
+              }
+       
+            },
+            fail: function (a) {
+              wx.showToast({
+                mask: true,
+                title: '上传失败',
+                icon: 'fail',
+                duration: 1000
+              })
+            }
+          })
+        }
+      })
+    
+  },
   submit: function () {
     var data = {
-      company: this.data.company,//公司名称
-      job_id: this.data.job_id,//职位名称
-      job_name: this.data.job_name,
-      trade_id: this.data.trade_id,
-      tag_one: this.data.tag_one,
-      tag_two: this.data.tag_two,
-      tag_three: this.data.tag_three,
-      division: this.data.division,
-      work_content: this.data.work_content,
-      work_ach: this.data.work_ach,
-      start_at: this.data.multiArrayBegin[0][this.data.multiIndex[0]].split('年')[0] + "-" + this.data.multiArrayBegin[1][this.data.multiIndex[1]].split('月')[0],
-      end_at: this.data.multiArrayOver[0][this.data.multiIndexs[0]].split('年')[0] + "-" + this.data.multiArrayOver[1][this.data.multiIndexs[1]].split('月')[0]
+      trade_id: this.data.trade_id,//行业id
+      company_fullname: this.data.company,//公司名称
+      company_shortname: this.data.job_name,//公司简称
+      position: this.data.division,//公司职位
+      off_network: this.data.off_network,//公司官网
+      logo_url: this.data.logo_url,//公司logo
+      financ_type: this.data.multiIndexs,//集资规模
+      team_type: this.data.multiIndex,//团队规模
     }
     console.log(data)
-    var url = 'addwork'
-    if (this.data.saveid && this.data.saveid != '') {
-      url = 'savework'
-      data.id = this.data.saveid
-    } else {
-      url = 'addwork'
+    if (data.company_fullname == '' || data.company_fullname==undefined){
+      wx.showModal({
+        title: '温馨提示',
+        content: '请填写公司名称',
+      })
+      return;
     }
-    utils.sendRrquest(url, 1, data)
+    if(data.company_shortname==''||data.company_shortname==undefined){
+      wx.showModal({
+        title: '温馨提示',
+        content: '请填写公司简称',
+      })
+      return;
+    }
+    if(data.position==''||data.position==undefined){
+      wx.showModal({
+        title: '温馨提示',
+        content: '请填写公司职位',
+      })
+      return;
+    }
+    if(data.off_network==undefined||data.off_network==''){
+      wx.showModal({
+        title: '温馨提示',
+        content: '请填写公司相关网站',
+      })
+      return;
+    }
+    if(data.logo_url==''||data.logo_url==undefined){
+      wx.showModal({
+        title: '温馨提示',
+        content: '请上传公司logo',
+      })
+      return;
+    }
+    utils.sendRrquest("addaduiting", 1, data)
       .then((res) => {
         if (res.data.status === '200') {
           wx.showToast({
-            title: '成功',
+            title: '提交成功',
             icon: 'success',
             duration: 500
           })
-          setTimeout(() => {
-            wx.navigateBack({
-              delta: 1
-            })
-          }, 500)
+          wx.navigateTo({
+            url: '../aduitingcard/aduitingcard?id='+res.data.data.id,
+          })
         } else {
           wx.showModal({
             title: '温馨提示',
@@ -285,27 +314,4 @@ opensetname: function() {
         console.log(res)
       })
   },
-  delsubmit: function () {
-    utils.sendRrquest('delwork', 1, { id: this.data.saveid }).then((res) => {
-      if (res.data.status === '200') {
-        wx.showToast({
-          title: '刪除成功',
-          icon: 'success',
-          duration: 500,
-          success: function () {
-            setTimeout(() => {
-              wx.navigateBack({
-                delta: 1
-              })
-            }, 500)
-          }
-        })
-      } else {
-        wx.showModal({
-          title: '温馨提示',
-          content: '删除失败，请重新打开小程序',
-        })
-      }
-    })
-  }
 })

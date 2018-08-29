@@ -1,0 +1,53 @@
+.h2{
+  font-size: 2rem;
+  width: 90%;
+  margin: 1rem auto 0;
+}
+.zhaop{
+  width: 90%;
+  margin: .5rem auto;
+  padding-bottom: .5rem;
+  font-size: .8rem;
+  color: #bababa;
+  border-bottom: 1px solid #3c3c3c;
+}
+.addintention{
+  width: 90%;
+  height: 3.5rem;
+   border-bottom: 1px solid #eeeeee;
+   position: relative;
+   margin: 0 auto;
+   background: white;
+}
+.addintention image:nth-child(1){
+  width:1.2rem;
+  height: 1.1rem;
+  margin-top: 1.3rem;
+  margin-right: .8rem;
+}
+.addintention text:nth-child(2){
+  font-size: 1rem;
+}
+.addintention text:nth-child(3){
+  position: absolute;
+  top: 1.2rem;
+  font-size: .8rem;
+  color: #bababa;
+  right: .4rem;
+}
+.addintention image:nth-child(4){
+  position: absolute;
+  top: 1.4rem;
+  width: .4rem;
+  height: .7rem;
+  right: -.4rem;
+}
+button{
+  width: 90%;
+  height: 40px;
+  line-height: 40px;
+  color: white;
+  text-align: center;
+  margin: 2rem auto 0;
+  background: #1eac8a;
+}

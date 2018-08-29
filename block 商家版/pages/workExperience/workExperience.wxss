@@ -41,7 +41,7 @@
   height: 2.8rem;
   line-height: 2.8rem;
   color: white;
-  background: #f59800;
+  background: #1eac8a;
   width: 90%;
   margin: 0 auto;
   text-align: center;
@@ -87,7 +87,7 @@ picker{
   margin-right: -2rem;
 }
 .tankuang view:nth-child(1) text:nth-child(2){
-  color: #f59800;
+  color: #1eac8a;
   float: right;
   margin-right: 1rem;
 }
@@ -102,7 +102,7 @@ picker{
 .tankuang view:nth-child(3){
   text-align: center;
   line-height: 2.8rem;
-  height: 2.8rem;color: #f59800;
+  height: 2.8rem;color: #1eac8a;
   border-top: 1px solid #bababa;
   margin-top: 3rem;
 }

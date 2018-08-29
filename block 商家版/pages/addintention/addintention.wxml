@@ -1,18 +1,32 @@
-<view class="Tips">您的多个意向都会被火聘者看到,请认真填写</view>
+<!-- <view class="Tips">您的多个意向都会被Boss看到,请认真填写</view> -->
 
-<navigator url='../ExpectedPosition/ExpectedPosition?id={{id}}' class='addintention' >
-<image src='/images/zhiwei.png'></image>
-<text>期望职位</text>
-<text>{{fidname}}</text>
-<image src='/images/sanjiao.png'></image>
-</navigator>
+ <view class='addintention' bindtap='opensetposition'>
+  <image src='/images/my.png'></image>
+  <text>招聘职位</text>
+  <text>{{position}}</text>
+  <image src='/images/sanjiao.png'></image>
+</view>
 
-<navigator class='addintention' url='../industry/industry?id={{id}}'>
-<image src='/images/hangye.png'></image>
-<text>期望行业</text>
-<text>{{trade_name_one}}</text>
-<image src='/images/sanjiao.png'></image>
-</navigator>
+
+
+
+  <view class='addintention' bindtap='opensetaddress'>
+<image src='/images/bao.png'></image>
+<text>公司地址</text>
+  <text  class="picker" >{{address}}</text>
+  <image src='/images/sanjiao.png'></image>
+
+  </view>
+
+
+  <view class='addintention' bindtap='opensetdoor_numbe'>
+<image src='/images/bao.png'></image>
+<text>门牌号</text>
+  <text  class="picker" >{{door_number}}</text>
+  <image src='/images/sanjiao.png'></image>
+
+  </view>
+
 
 <navigator url='../setCity/setCity?id={{id}}' class='addintention'>
 <image src='/images/chengshi.png'></image>
@@ -20,6 +34,34 @@
 <text>{{area_name}}</text>
 <image src='/images/sanjiao.png'></image>
 </navigator>
+
+<navigator   bindtap='gongsihangye' class='addintention'>
+<image src='/images/leixin.png'></image>
+<text>职位类型</text>
+<text>{{job_id_name}}</text>
+<image src='/images/sanjiao.png'></image>
+</navigator>
+
+
+
+
+
+
+<view class='addintention' bindtap='gotojinengbiaoqian'>
+<image src='/images/biaoqian.png'></image>
+<text>技能标签</text>
+<text>{{tag_one}}</text>
+<image src='/images/sanjiao.png'></image>
+</view>
+
+
+<navigator url='../content/content?type=content&content={{work_content}}' class='addintention' >
+<image src='/images/zhuanye.png'></image>
+<text>工作内容</text>
+<text>点击查看</text>
+<image src='/images/sanjiao.png'></image>
+</navigator>
+
 
 
   <picker mode="multiSelector" class='addintention' bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
@@ -31,5 +73,46 @@
   </picker>
 
 
+ <picker mode="selector" class='addintention' bindchange='bindPickerChange' value="{{degree}}" range="{{multiArrayEdu}}">
+  <image src='/images/xueli.png'></image>
+  <text>最低学历</text>
+  <text  class="picker" >{{multiArrayEdu[degree]}}</text>
+  <image src='/images/sanjiao.png'></image>
+</picker> 
+
+ <picker mode="selector" class='addintention' bindchange='bindwork_status' value="{{work_status}}" range="{{work_statusArray}}">
+  <image src='/images/xueli.png'></image>
+  <text>工作性质</text>
+  <text  class="picker" >{{work_statusArray[work_status]}}</text>
+  <image src='/images/sanjiao.png'></image>
+</picker> 
+
+
+ <picker mode="selector" class='addintention' bindchange='bindwork_exp' value="{{work_exp}}" range="{{work_expArray}}">
+  <image src='/images/xueli.png'></image>
+  <text>工作经验</text>
+  <text  class="picker" >{{work_expArray[work_exp]}}</text>
+  <image src='/images/sanjiao.png'></image>
+</picker> 
+
+
+
+
+
+
+
+
 <view class='submit' bindtap='submit'>保存</view>
-<view class='submit' style="display:{{id!='undefined'?'block':'none'}};margin-top:1rem" bindtap='del'>删除</view>
+
+<view class='submit' style="display:{{id&&id!=''?'block':'none'}}" bindtap='delsubmit'>删除</view>
+
+<view class='tan' style='display:{{tankuangstatus}}'>
+  <view class='tankuang'> 
+  <view>
+  <text>{{tankuangname}}</text>
+  <text bindtap='close'>关闭</text>
+  </view>
+  <input placeholder='输入内容'  bindinput='setname' value='{{name}}' placeholder-style='text-align: center; color:#cccccc;'></input>
+  <view bindtap='setnames'>保存</view>
+  </view>
+</view>

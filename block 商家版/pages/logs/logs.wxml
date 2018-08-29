@@ -1,34 +1,27 @@
 <view class='header'>
   <view class='headerTitle'>
-    <view>{{username&&username!=''?username:'请填写在线简历'}}</view>
-    <view>{{userAg0}}</view>
+    <view>{{aduiting.company_fullname}}</view>
+    <view>{{aduiting.real_name}}</view>
   </view>
-  <image src='{{avatarUrl}}'></image>
+  <image src='{{aduiting.logo_url}}'></image>
 </view>
-<!--  -->
-<!-- <video src="blob:http://www.iqiyi.com/fe52650c-1b3e-48ce-a377-8e0521b4f6b7"   controls ></video> -->
 
 <view class='footer'>
    <navigator class='footerItem' url='/pages/upjianli/upjianli'>
     <image src='/images/upjianli.png'></image>
-    <text>视频简历</text>
+    <text>视频介绍</text>
     <image src='/images/sanjiao.png'></image>
   </navigator>
   <navigator class='footerItem' bindtap='gotojianli'>
     <image src='/images/jianli.png'></image>
-    <text>在线简历</text>
+    <text>职位管理</text>
     <image src='/images/sanjiao.png'></image>
   </navigator>
  
-  <!-- <navigator class='footerItem' url='/pages/interested/interested'>
-    <image src='/images/interested.png'></image>
-    <text>感兴趣职位</text>
-    <image src='/images/sanjiao.png'></image>
-  </navigator> -->
-
+  
   <navigator class='footerItem' bindtap='showModel'>
     <image src='/images/interested.png'></image>
-    <text>我要招聘</text>
+    <text>实名认证</text>
     <image src='/images/sanjiao.png'></image>
   </navigator>
 </view>

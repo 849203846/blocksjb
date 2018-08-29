@@ -1,5 +1,6 @@
 <image src='/images/logo.png'></image>
   <view>
-    <view>微信授权即可使用该小程序</view>
- <button open-type="getUserInfo" bindgetuserinfo="bindgetuserinfo">点我授权</button> 
+    <view>欢迎使用火聘商家版。</view>
+ <button open-type="getUserInfo" bindgetuserinfo="bindgetuserinfo">开始使用</button> 
+ 
   </view>

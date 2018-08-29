@@ -11,10 +11,6 @@ Page({
     loginstatus:'none',//登录态
     loginClose:'none'
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad: function (options) {
     if (app.globalData.userInfo){
       this.setData({
@@ -23,6 +19,14 @@ Page({
         userAg0: '点击头像可登录/注册',
       })
     }
+    wx.getStorage({
+      key: 'aduiting',
+      success: (res) => {
+        this.setData({
+          aduiting:res.data
+        })
+      },
+    })
     wx.getStorage({
       key: 'userInfo',
       success: (res) =>{
@@ -83,7 +87,7 @@ Page({
   showModel:function(){
     wx.showModal({
       title: '温馨提示',
-      content: '使用火娉企业版小程序，发布职位，招聘牛人',
+      content: '您已实名认证',
       showCancel: false,
       confirmText: '知道啦',
     })

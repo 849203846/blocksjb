@@ -1,0 +1,50 @@
+  <view class='addintention' bindtap='setdivision'>
+<image src='/images/my.png'></image>
+<text>真实姓名</text>
+<text>{{real_name}}</text>
+<image src='/images/sanjiao.png'></image>
+</view>
+
+  <view class='addintention' bindtap='setoff_network'>
+<image src='/images/jianli.png'></image>
+<text>身份证号</text>
+<text>{{id_card}}</text>
+<image src='/images/sanjiao.png'></image>
+</view>
+
+  <view class='addintention' bindtap='setcard_pros'>
+<image src='/images/shenfenz.png'></image>
+<text>身份证正面</text>
+<text>{{card_pros==""?"点击上传":'上传成功'}}</text>
+<image src='/images/sanjiao.png'></image>
+</view>
+
+  <view class='addintention' bindtap='setlogo_url'>
+<image src='/images/shenfenz.png'></image>
+<text>身份证反面</text>
+<text>{{logo_url==""?"点击上传":'上传成功'}}</text>
+<image src='/images/sanjiao.png'></image>
+</view>
+
+  <view class='addintention' bindtap='setphone'>
+<image src='/images/Phone.png'></image>
+<text>手机验证</text>
+<text>{{phone}}</text>
+<image src='/images/sanjiao.png'></image>
+</view>
+
+<button bindtap='submit'>提交审核</button>
+<view class='tan' style='display:{{tankuangstatus}}'>
+  <view class='tankuang'> 
+  <view>
+  <text>{{tankuangname}}</text>
+  <text bindtap='close'>关闭</text>
+  </view>
+  <input placeholder='{{tankuangnameOne}}'  bindinput='setname' value='{{name}}' placeholder-style='text-align: center; color:#cccccc;'></input>
+  <view class='phone' wx:if="{{tankuangname=='手机验证'}}">
+    <input type='text' value='{{code}}' bindinput='setcode' maxlength='6' placeholder-style='text-align: center; color:#cccccc;' placeholder='请输入验证码'></input>
+    <text bindtap='sendsms' style='background:{{btncolor}}'>{{sendsms}}</text>
+  </view>
+  <view bindtap='setnames' class='submitben'>保存</view>
+  </view>
+</view>

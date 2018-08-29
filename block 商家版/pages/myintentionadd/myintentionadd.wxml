@@ -13,76 +13,54 @@
 <text>{{trade}}</text>
 <image src='/images/sanjiao.png'></image>
 </navigator>
-
-<navigator   bindtap='gongsihangye' class='addintention'>
-<image src='/images/leixin.png'></image>
-<text>职位类型</text>
-<text>{{job_id_name}}</text>
-<image src='/images/sanjiao.png'></image>
-</navigator>
-
-
-
-
-
   <view class='addintention' bindtap='opensetnametwo'>
 <image src='/images/bao.png'></image>
-<text>职位名称</text>
+<text>公司简称</text>
   <text  class="picker" >{{job_name}}</text>
   <image src='/images/sanjiao.png'></image>
 
   </view>
 
-<view class='addintention' bindtap='gotojinengbiaoqian'>
-<image src='/images/biaoqian.png'></image>
-<text>技能标签</text>
-<text>{{tag_one}}</text>
-<image src='/images/sanjiao.png'></image>
-</view>
-
 <view class='addintention' bindtap='setdivision'>
 <image src='/images/bumen.png'></image>
-<text>所属部门</text>
+<text>公司职位</text>
 <text>{{division}}</text>
 <image src='/images/sanjiao.png'></image>
 </view>
 
-<navigator url='../content/content?type=content&content={{work_content}}' class='addintention' >
-<image src='/images/zhuanye.png'></image>
-<text>工作内容</text>
-<text>点击查看</text>
+  <view class='addintention' bindtap='setoff_network'>
+<image src='/images/wangzhi.png'></image>
+<text>官网地址</text>
+<text>{{off_network}}</text>
 <image src='/images/sanjiao.png'></image>
-</navigator>
+</view>
 
-
-<navigator class='addintention' url='../content/content?type=contents&content={{work_ach}}' >
-<image src='/images/yeji.png'></image>
-<text>工作业绩</text>
-<text>点击查看</text>
+  <view class='addintention' bindtap='setlogo_url'>
+<image src='/images/ffflogo.png'></image>
+<text>公司logo</text>
+<text>{{logo_url==""?"点击上传":'上传成功'}}</text>
 <image src='/images/sanjiao.png'></image>
-</navigator>
+</view>
 
 
-  <picker mode="multiSelector" class='addintention' bindchange="bindMultiPickerChange"  value="{{multiIndex}}" range="{{multiArrayBegin}}">
+  <picker  class='addintention' bindchange="bindMultiPickerChange" range="{{multiArrayBegin}}">
 
-<image src='/images/time.png'></image>
-<text>开始时间</text>
-  <text  class="picker" >{{multiArrayBegin[0][multiIndex[0]]}}-{{multiArrayBegin[1][multiIndex[1]]}}</text>
+<image src='/images/tuanduiguim.png'></image>
+<text>公司规模</text>
+  <text  class="picker" >{{multiArrayBegin[multiIndex]}}</text>
+  <image src='/images/sanjiao.png'></image>
+  </picker>
+  <picker  class='addintention' bindchange="bindMultiPickerChanges" range="{{multiArrayOver}}">
+
+<image src='/images/jiziguimo.png'></image>
+<text>集资规模</text>
+  <text  class="picker" >{{multiArrayOver[multiIndexs]}}</text>
   <image src='/images/sanjiao.png'></image>
   </picker>
 
-  <picker mode="multiSelector" class='addintention' value="{{multiIndexs}}" bindchange="bindMultiPickerChanges"  range="{{multiArrayOver}}">
-
-  <image src='/images/time.png'></image>
-<text>结束时间</text>
-  <text  class="picker" >{{multiArrayOver[0][multiIndexs[0]]}}-{{multiArrayOver[1][multiIndexs[1]]}}</text>
-  <image src='/images/sanjiao.png'></image>
-
-  </picker> 
 
 <view class='submit' bindtap='submit'>保存</view>
 
-<view class='submit' style="display:{{saveid&&saveid!=''?'block':'none'}}" bindtap='delsubmit'>删除</view>
 
 <view class='tan' style='display:{{tankuangstatus}}'>
   <view class='tankuang'> 

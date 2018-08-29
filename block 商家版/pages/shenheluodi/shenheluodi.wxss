@@ -1,0 +1,26 @@
+page>image{
+  height: 5rem;
+}
+.content{
+  height: 12rem;
+  position: relative;
+}
+.content .h3{
+  width: 90%;
+  margin: 0  auto 1rem;
+  font-size: 1.8rem;
+}
+.content .h4{
+    width: 90%;
+  margin: 0  auto;
+}
+.content .h5{
+    width: 90%;
+  margin: 3rem auto 0;
+  color: #bababa;
+}
+.h6{
+    width: 90%;
+  margin: 3rem auto 0;
+  color: #1eac8a;
+}

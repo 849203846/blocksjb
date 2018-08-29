@@ -1,7 +1,10 @@
 {
   "pages":[
+        "pages/index/index",
+    "pages/getuser/getuser",
 
-    "pages/index/index",
+    "pages/aduitingcard/aduitingcard",
+    "pages/aduitinglicense/aduitinglicense",
     "pages/logs/logs",
     "pages/myintentionadd/myintentionadd",
     "pages/chat/chat",
@@ -9,6 +12,7 @@
     "pages/addintention/addintention",
     "pages/phonelogin/phonelogin",
     "pages/interested/interested",
+    "pages/shenheluodi/shenheluodi",
     "pages/jianli/jianli",
     "pages/industry/industry",
     "pages/ExpectedPosition/ExpectedPosition",
@@ -30,7 +34,7 @@
     "pages/sousuo/sousuo",
     "pages/chatliat/chatliat",
         "pages/zhaopinlist/zhaopinlist",
-    "pages/getuser/getuser",
+
     "pages/companyHome/companyHome"
 
   ],
@@ -62,6 +66,6 @@
       }
       
     ],
-    "selectedColor":"#f59800"
+    "selectedColor":"#1eac8a"
   }
 }

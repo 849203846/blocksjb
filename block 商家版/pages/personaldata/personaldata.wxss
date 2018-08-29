@@ -40,7 +40,7 @@ button{
 button{
   width: 80%;
   height:40px;
-  background: #f59800;
+  background: #1eac8a;
   color: white;
   border-radius: 50px;
   line-height: 40px;
@@ -79,7 +79,7 @@ button{
   margin-right: -2rem;
 }
 .tankuang view:nth-child(1) text:nth-child(2){
-  color: #f59800;
+  color: #1eac8a;
   float: right;
   margin-right: 1rem;
 }
@@ -94,7 +94,7 @@ button{
 .tankuang view:nth-child(3){
   text-align: center;
   line-height: 2.8rem;
-  height: 2.8rem;color: #f59800;
+  height: 2.8rem;color: #1eac8a;
   border-top: 1px solid #bababa;
   margin-top: 3rem;
 }

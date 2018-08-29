@@ -9,7 +9,7 @@
   width: 3rem;
   height: 3rem;
   border-radius: 50px;
-  background: #f59800;
+  background: #1eac8a;
   margin-top: .6rem;
 }
 .chatItel .itemContent{
@@ -30,7 +30,7 @@
 .chatItel .itemContent view:nth-child(1) text:nth-child(3){
   font-size: .6rem;
   margin-right: .5rem;
-  color: #f59800;
+  color: #1eac8a;
   float: right;
   padding-top: .2rem;
 
@@ -48,6 +48,6 @@
 }
 .chatItel .itemContent view:nth-child(2) text{
   float: right;
-  color: #f59800;
+  color: #1eac8a;
   margin-right: .5rem;
 }

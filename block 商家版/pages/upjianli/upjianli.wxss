@@ -8,7 +8,7 @@
 .notjianli view{
   width: 80%;
   border-radius: 50px;
-  background: #f59800;
+  background: #1eac8a;
   color: white;
   margin: 0 auto;
   text-align: center;

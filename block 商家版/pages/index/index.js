@@ -3,6 +3,7 @@ const app = getApp()
 
 Page({
   data: {
+    list:[],
     page:'1',
     imgUrls: [
       '/images/banner1.jpg',
@@ -30,6 +31,77 @@ Page({
     this.getposition()
   },
   onLoad: function () {
+    setTimeout(() => {
+      if (wx.getStorageSync('userInfo').user_id == undefined) return
+      utils.sendRrquest('getaduiting', 1, {})
+        .then((res) => {
+          if (res.data.status === '200') {
+            console.log(res.data)
+            var data = res.data.data
+            if (data.status === 4) {
+              wx.showModal({
+                title: '温馨提示',
+                content: '审核未通过，请重新提交审核',
+                success: function () {
+                  wx.reLaunch({
+                    url: '../myintentionadd/myintentionadd',
+                  })
+                }
+              })
+            } else if (data.status == 3) {
+              // wx.showModal({
+              //   title: '温馨提示',
+              //   content: '您的审核认证成功，您现在可以招聘牛人啦',
+              //   success:function(){
+              wx.setStorage({
+                key: 'aduiting',
+                data: data,
+              })
+              wx.reLaunch({
+                url: '../index/index',
+              })
+              // }
+              // })
+            } else if (data.status == 1) {
+              wx.showModal({
+                title: '温馨提示',
+                content: '请认证公司',
+                success: function () {
+                  wx.reLaunch({
+                    url: '../aduitinglicense/aduitinglicense?id=' + data.id,
+                  })
+                }
+              })
+            } else if (data.status === 0) {
+              wx.showModal({
+                title: '温馨提示',
+                content: '请认证您的身份',
+                success: function () {
+                  wx.reLaunch({
+                    url: '../aduitingcard/aduitingcard?id=' + data.id,
+                  })
+                }
+              })
+            } else if (data.status === 2) {
+              //
+              wx.reLaunch({
+                url: '../shenheluodi/shenheluodi',
+              })
+            }
+          } else if (res.data.status === '300') {
+            wx.showModal({
+              title: '温馨提示',
+              content: '请添加公司',
+              success: function () {
+                wx.reLaunch({
+                  url: '../myintentionadd/myintentionadd',
+                })
+              }
+            })
+          }
+        })
+    }, 500)
+    
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
@@ -56,19 +128,40 @@ Page({
         }
       })
     }
-  },
-  onShow:function(){
-    app.getuser()
     utils.sendRrquest('getpositionnum', 1, {})
       .then((res) => {
         console.log(res.data)
-        this.setData({
-          list: res.data.data,
-          job_id:res.data.data[0].job_id
-        })
-        this.getposition()
-      })
+        if (res.data.data) {
+          this.setData({
+            list: res.data.data,
+            job_id: res.data.data[0].job_id
+          })
+          this.getposition()
+        } else {
+          wx.showModal({
+            title: '温馨提示',
+            content: '您还没有发布招聘信息',
+            success: function (e) {
+              if (e.cancel) {
+                wx.navigateTo({
+                  url: '../addintention/addintention',
+                })
+              }
+            }
+          })
+        }
 
+      })
+  },
+  onShow:function(){
+    // app.getuser()
+ 
+
+  },
+  openaddintention:function(){
+    wx.navigateTo({
+      url: '../addintention/addintention',
+    })
   },
   getposition:function(){
     var data = {
@@ -114,7 +207,7 @@ Page({
     })
   },
   gotopositionItel:function(e){
-    console.log(e)
+    console.log(e.target.dataset.id)
     wx.navigateTo({
       url: '../positionItel/positionItel?id=' + e.target.dataset.id
     })

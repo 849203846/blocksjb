@@ -23,7 +23,7 @@ view text:nth-child(3){
   position: absolute;
   top: .5rem;
   right: 0;
-  color: #f59800;
+  color: #1eac8a;
 }
 view text:nth-child(4){
   position: absolute;

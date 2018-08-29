@@ -1,0 +1,10 @@
+<image src="../../images/486907278461094244.png"> </image>
+<view class='content'>
+<view class='h3'>认证审核中</view>
+<view class='h4'>您的企业认证已提交，我们将尽快审核。</view>
+<view class='h4'>审核时间：工作日9：00-18：00</view>
+<view class='h4'>非工作日不审核</view>
+<view class='h5'>认证成功后，您就可以招聘牛人了。</view>
+</view>
+
+<view class='h6' bindtap='gotogongsi'>重新认证</view>

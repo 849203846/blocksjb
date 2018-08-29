@@ -1,4 +1,5 @@
 var app=getApp()
+const utils = require('../..//utils/util.js')
 Page({
   data: {
   
@@ -8,8 +9,8 @@ Page({
   },
   bindgetuserinfo:function(){
     app.getuser()
-    wx.reLaunch({
-      url: '../index/index',
-    })
+  
+
+
   }
 })

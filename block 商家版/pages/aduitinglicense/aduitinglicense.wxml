@@ -1,0 +1,19 @@
+<view class="h2">企业认证</view>
+<view class='zhaop'>请任选一种认证方式完成认证，开始招聘。</view>
+
+  <view class='addintention' wx:if="{{job_url==''}}" bindtap='setcard_pros'>
+<image src='/images/zhizhao.png'></image>
+<text>营业执照</text>
+<text>{{license_url==""?"点击上传":'上传成功'}}</text>
+<image src='/images/sanjiao.png'></image>
+</view>
+
+  <view wx:if="{{license_url==''}}" class='addintention' bindtap='setlogo_url'>
+<image src='/images/bumen.png'></image>
+<text>工作证明</text>
+<text>{{job_url==""?"点击上传":'上传成功'}}</text>
+<image src='/images/sanjiao.png'></image>
+</view>
+
+
+<button bindtap='submit'>提交审核</button>
